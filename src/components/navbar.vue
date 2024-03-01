@@ -4,11 +4,15 @@
             <div class="main container">
                 <div class="toggle">
                     <div>
-                        <button><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                        <button>
+                        
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
                                 fill="none">
                                 <path d="M3.9751 5.9751H19.9751M3.9751 11.9751H19.9751M3.9751 17.9751H19.9751"
                                     stroke="#B41618" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-                            </svg></button>
+                            </svg>
+                            
+                            </button>
 
                         <v-overlay activator="parent" location-strategy="connected" scroll-strategy="reposition">
                             <div class="links-mobile">
@@ -24,7 +28,7 @@
                                         </svg>
                                     </div>
                                     <div class="d-flex link align-items-center gap-3">
-                                        <RouterLink to="/about"> المباريات </RouterLink>
+                                        <RouterLink to="/matches"> المباريات </RouterLink>
                                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"
                                             fill="none">
                                             <path
@@ -34,7 +38,7 @@
                                         </svg>
                                     </div>
                                     <div class="d-flex link align-items-center gap-3">
-                                        <RouterLink to="/about"> الأخبار </RouterLink>
+                                        <RouterLink to="/news"> الأخبار </RouterLink>
                                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"
                                             fill="none">
                                             <path
@@ -44,7 +48,7 @@
                                         </svg>
                                     </div>
                                     <div class="d-flex link align-items-center gap-3">
-                                        <RouterLink to="/about"> دوريات وبطولات </RouterLink>
+                                        <RouterLink to="/leagues"> دوريات وبطولات </RouterLink>
 
                                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"
                                             fill="none">
@@ -55,7 +59,7 @@
                                         </svg>
                                     </div>
                                     <div class="d-flex link align-items-center gap-3">
-                                        <RouterLink to="/about"> مالتيميديا </RouterLink>
+                                        <RouterLink to="/multimedia"> مالتيميديا </RouterLink>
                                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"
                                             fill="none">
                                             <path
@@ -70,14 +74,16 @@
                     </div>
                 </div>
                 <div class="logo">
+                <RouterLink to="/">
                     <img src="../assets/images/kora-logo.png" alt="">
+                </RouterLink>
                 </div>
                 <div class="links">
                     <RouterLink to="/">{{ $t('home') }}</RouterLink>
-                    <RouterLink to="/about"> المباريات </RouterLink>
-                    <RouterLink to="/about"> الأخبار </RouterLink>
-                    <RouterLink to="/about"> دوريات وبطولات </RouterLink>
-                    <RouterLink to="/about"> مالتيميديا </RouterLink>
+                    <RouterLink to="/matches"> المباريات </RouterLink>
+                    <RouterLink to="/news"> الأخبار </RouterLink>
+                    <RouterLink to="/leagues"> دوريات وبطولات </RouterLink>
+                    <RouterLink to="/multimedia"> مالتيميديا </RouterLink>
                 </div>
 
                 <div class="searchNav">

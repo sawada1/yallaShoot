@@ -12,7 +12,8 @@ $grey2: #7a7a7a;
 $cards: #f2f2f2;
 $black: #212121;
 $green: #0cb14e;
-
+$margin-bottom: 50px;
+$lightBlue: rgba(35, 20, 93, 0.35);
 a {
     color: inherit;
     text-decoration: none;
@@ -21,8 +22,17 @@ p {
     padding: 0;
     margin: 0;
 }
+
+@font-face {
+    font-family: "Frutiger LT Arabic";
+    src: url("./fonts/FrutigerLTArabic45Light.ttf") format("truetype");
+    // font-weight: bolder;
+    font-display: swap;
+}
+
 body {
     overflow-x: clip;
+    font-family: "Frutiger LT Arabic", sans-serif;
 }
 
 body,
@@ -37,6 +47,7 @@ h4,
 h5,
 h6 {
     color: $black;
+    margin: 0;
 }
 
 button {
@@ -63,7 +74,23 @@ button {
         font-style: normal;
         font-weight: 700;
         color: $black;
-        padding: 0px 10px;
+        padding: 0px 16px;
+    }
+    &.new {
+        padding: 0px 16px;
+        div {
+            gap: 14px;
+        }
+        h4 {
+            color: $mainColor;
+            padding: 0px;
+        }
+        .neww {
+            font-size: 20px;
+            font-style: normal;
+            font-weight: 300;
+            color: $black;
+        }
     }
     button {
         display: flex;
@@ -78,6 +105,9 @@ button {
         font-size: 16px;
         font-style: normal;
         font-weight: 400;
+    }
+    svg {
+        margin-top: 4px;
     }
     position: relative;
     height: 50px;
@@ -97,6 +127,38 @@ button {
         top: 0;
     }
 }
+.head-line-red {
+    h4 {
+        font-size: 20px;
+        font-style: normal;
+        font-weight: 700;
+        color: $white;
+        padding: 0px 16px;
+    }
+    svg {
+        margin-top: 4px;
+    }
+    button {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: $white;
+        gap: 8px;
+        // background-color: $mainColor;
+        font-size: 16px;
+        padding: 0px 10px;
+        font-style: normal;
+        font-weight: 400;
+    }
+    position: relative;
+    height: 50px;
+    width: 100%;
+    background-color: $mainColor;
+    // padding: 5px 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
 
 .news-card {
     // min-height: 300px;
@@ -104,8 +166,16 @@ button {
     background-color: $cards;
     box-shadow: 0px 4px 4px 0px rgba(164, 164, 164, 0.25);
     transition: 0.4s;
+    // border: 1px solid $grey;
+    border-width: 1px;
+    border-style: solid;
+    border-color: transparent;
+    cursor: pointer;
     &:hover {
-        // border: 1px solid $grey;
+        border-color: $grey;
+    }
+    .flow-text-mobile {
+        display: none;
     }
     .text {
         padding: 8px;
@@ -169,17 +239,170 @@ button {
     .tags {
         display: flex;
         align-items: center;
-        gap: 5px;
+        gap: 8px;
+        // background-color: red;
         .line {
             width: 1px;
             height: 12px;
             background-color: $grey2;
         }
         span {
-            font-size: 14px;
+            font-size: 12px;
             font-style: normal;
             font-weight: 300;
             color: $grey2;
+        }
+    }
+}
+
+.video-card {
+    border-radius: 8px;
+    background-color: $cards;
+    box-shadow: 0px 4px 4px 0px rgba(164, 164, 164, 0.25);
+    //  height: 469px;
+    &.news {
+        .video-container {
+            height: 350px;
+        }
+    }
+    &.sum-main {
+        .video-container {
+            height: 425px;
+        }
+    }
+    &.sum {
+        .video-container {
+            height: 157px;
+            .icon {
+                top: 20%;
+                svg {
+                    width: 80px !important;
+                    height: 80px !important;
+                }
+            }
+        }
+    }
+    .video-container {
+        position: relative;
+        border-top-left-radius: 8px;
+        border-top-right-radius: 8px;
+        &::before {
+            content: "";
+            position: absolute;
+            top: 100%;
+            background-color: $mainColor;
+            width: 100%;
+            height: 4px;
+        }
+        .time {
+            position: absolute;
+            bottom: 10px;
+            left: 10px;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            border-radius: 5px;
+            background-color: $white;
+            cursor: pointer;
+            span {
+                font-size: 13px;
+                color: $black;
+                padding: 0px 3px;
+                font-weight: 700;
+            }
+        }
+        .overlay {
+            border-top-left-radius: 8px;
+            border-top-right-radius: 8px;
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            right: 0;
+            left: 0;
+            background: $lightBlue;
+        }
+        .icon {
+            position: absolute;
+            top: 35%;
+            // transform: translateY(-50%);
+            left: 50%;
+            cursor: pointer;
+            transform: translateX(-50%);
+        }
+        img {
+            border-top-left-radius: 8px;
+            border-top-right-radius: 8px;
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+        }
+    }
+    h5 {
+        padding: 10px;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 25px;
+    }
+}
+
+@media (max-width: 900px) {
+    .head-line {
+        button {
+            display: none;
+        }
+    }
+    .head-line,
+    .head-line-red {
+        // height: fit-content;
+        .neww {
+            font-size: 16px !important;
+            display: none;
+        }
+    }
+    .news-card {
+        display: flex;
+        gap: 2px;
+        height: 160px;
+        padding: 5px;
+        position: relative;
+        .flow-text-mobile {
+            display: block;
+            width: fit-content;
+            padding: 5px;
+            height: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 0px 4px 4px 0px;
+            background: $grey;
+            position: absolute;
+            left: 0;
+            bottom: 5px;
+            span {
+                color: $black;
+                font-size: 14px;
+                font-style: normal;
+                font-weight: 300;
+            }
+        }
+        .img-container {
+            // width: 100px;
+            width: 180px;
+            height: 100% !important;
+            border: 8px;
+            &::before {
+                content: "";
+                border-radius: 8px;
+            }
+            img {
+                border-radius: 8px !important;
+            }
+        }
+        .tags,
+        .text-flow {
+            display: none;
         }
     }
 }
