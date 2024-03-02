@@ -34,6 +34,22 @@ const { locale } = useI18n();
             <span class="d-none d-xl-inline d-lg-inline">|</span>
             <RouterLink to="/multimedia"> مالتيميديا </RouterLink>
           </div>
+
+          <div class="navs-mobile w-100">
+            <div class="w-100 d-flex align-items-center navv justify-content-between">
+              <RouterLink to="/">{{ $t('home') }} </RouterLink>
+              <RouterLink to="/matches"> المباريات </RouterLink>
+            </div>
+            <div class="w-100 d-flex align-items-center navv justify-content-between">
+              <RouterLink to="/news"> الأخبار </RouterLink>
+
+              <RouterLink to="/leagues"> دوريات وبطولات </RouterLink>
+            </div>
+            <div class="w-100 d-flex align-items-center navv justify-content-between">
+              <RouterLink to="/leagues"> دوريات وبطولات </RouterLink>
+              <RouterLink to="/multimedia"> مالتيميديا </RouterLink>
+            </div>
+          </div>
           <div class="icons d-flex align-items-center gap-3">
             <a href="#" target="_blank">
               <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 26 26" fill="none">
@@ -115,6 +131,19 @@ const { locale } = useI18n();
             <span class="d-none d-xl-inline d-lg-inline">|</span>
 
             <RouterLink to="/announce"> للإعلان معنا </RouterLink>
+          </div>
+          <div class="navs-mobile w-100">
+            <div class="w-100 d-flex align-items-center navv justify-content-between">
+              <RouterLink to="/announce"> للإعلان معنا </RouterLink>
+
+              <RouterLink to="/about"> من نحن </RouterLink>
+
+            </div>
+            <div class="w-100 d-flex align-items-center navv justify-content-between">
+              <RouterLink to="/policy"> سياسة الخصوصية </RouterLink>
+              <RouterLink to="/contact">إتصل بنا </RouterLink>
+
+            </div>
           </div>
           <span> جميع الحقوق محفوظة 2024 </span>
         </div>

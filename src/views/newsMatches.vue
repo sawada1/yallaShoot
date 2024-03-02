@@ -4,15 +4,16 @@
             <div class="videos-page">
                 <div class="head-line new mb-4">
                     <div class="d-flex align-items-center">
-                        <h4> الأخبار </h4>
+                        <h4> مالتيميديا </h4>
                         <span class="neww">
-                            مالتيميديا
+                            | ملخص المباريات
                         </span>
                     </div>
                 </div>
 
                 <div class="row">
                     <div v-for="i in 20" class="col-12 col-lg-3 col-xl-3 col-md-6 mb-3">
+                    <router-link to="/videoMatch">
                         <div class="video-card sum">
                             <div class="video-container">
                                 <img src="../assets/images/video1.png" />
@@ -40,6 +41,8 @@
 
                             <h5> تياجو ميسي يهدر ركلة جزاء بطريقة غريبة </h5>
                         </div>
+                    
+                    </router-link>
                     </div>
                 </div>
 

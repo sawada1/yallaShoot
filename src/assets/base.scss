@@ -31,12 +31,13 @@ p {
 }
 
 body {
-    overflow-x: clip;
+    // overflow-x: clip;
     font-family: "Frutiger LT Arabic", sans-serif;
 }
 
 body,
 html {
+    overflow-x: clip;
     position: relative;
 }
 
@@ -171,9 +172,8 @@ button {
     border-style: solid;
     border-color: transparent;
     cursor: pointer;
-    &:hover {
-        border-color: $grey;
-    }
+    transition: 0.4s all;
+
     .flow-text-mobile {
         display: none;
     }
@@ -183,10 +183,12 @@ button {
     .img-container {
         height: 140px;
         width: 100%;
+        transition: 0.4s all;
         position: relative;
         &::before {
             content: "";
             position: absolute;
+            transition: 0.4s all;
             top: 0;
             right: 0;
             left: 0;
@@ -227,6 +229,7 @@ button {
         font-size: 17px;
         font-weight: 700;
         margin-top: 16px;
+        line-height: 27px;
         margin-bottom: 8px;
     }
     p {
@@ -253,6 +256,56 @@ button {
             color: $grey2;
         }
     }
+
+    &.main {
+        transition: 0.4s all;
+        .text-flow {
+            position: absolute;
+            bottom: 10px;
+            right: 0;
+            left: auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: transparent;
+            color: $white;
+            font-size: 16px;
+            font-style: normal;
+            font-weight: 300;
+            svg {
+                margin-top: 4px;
+            }
+        }
+        &:hover {
+            border-color: $grey;
+            .tags {
+                svg {
+                    // stroke: $mainColor;
+                    // fill: $mainColor;
+                    path {
+                        // stroke: $mainColor;
+                        fill: $mainColor;
+                    }
+                }
+            }
+            .img-container {
+                transition: 0.4s all;
+                &::before {
+                    content: "";
+                    position: absolute;
+                    top: 0;
+                    right: 0;
+                    left: 0;
+                    height: 100%;
+                    width: 100%;
+                    // background: linear-gradient(180deg, rgba(33, 33, 33, 0) 0%, #212121 100%);
+                    background: transparent;
+                    border-top-left-radius: 8px;
+                    border-top-right-radius: 8px;
+                }
+            }
+        }
+    }
 }
 
 .video-card {
@@ -267,7 +320,7 @@ button {
     }
     &.sum-main {
         .video-container {
-            height: 425px;
+            height: 430px;
         }
     }
     &.sum {
@@ -320,7 +373,8 @@ button {
             top: 0;
             right: 0;
             left: 0;
-            background: $lightBlue;
+            // background: red;
+            background: linear-gradient(180deg, rgba(33, 33, 33, 0) 0%, #212121 100%);
         }
         .icon {
             position: absolute;
@@ -339,11 +393,31 @@ button {
         }
     }
     h5 {
-        padding: 10px;
+        padding: 14px 8px;
         font-size: 16px;
         font-style: normal;
         font-weight: 700;
         line-height: 25px;
+    }
+}
+
+@media (max-width: 1190px) {
+    .news-card {
+        h5 {
+            font-size: 16px !important;
+            margin: 3px 0px;
+        }
+
+        .img-container {
+            height: 125px;
+        }
+        p {
+            margin-bottom: 3px;
+            font-size: 14px;
+        }
+    }
+    .news-container-home .main .main-box {
+        height: 335px;
     }
 }
 
@@ -360,6 +434,9 @@ button {
             font-size: 16px !important;
             display: none;
         }
+    }
+    .news-container-home .main .main-box {
+        height: 500px;
     }
     .news-card {
         display: flex;

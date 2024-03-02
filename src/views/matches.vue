@@ -91,21 +91,24 @@
                 </div>
 
                 <div class="leg-container mt-5">
-                    <div v-for="i in 4" class="box">
+                    <div v-for="i , index in 4" class="box">
                         <div class="head-line-red">
                             <h4>الدوري المصري</h4>
+                            <router-link :to="{name:'clup',params:{id:index+1}}" class="">
+                                <button>
+                                    <span clas> عرض المزيد </span>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                        fill="none">
+                                        <path d="M5 12H19M5 12L12 5M5 12L12 19" stroke="#F8F8F9" stroke-width="2"
+                                            stroke-linecap="round" stroke-linejoin="round" />
+                                    </svg>
+                                </button>
 
-                            <button>
-                                <span clas> عرض المزيد </span>
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                                    fill="none">
-                                    <path d="M5 12H19M5 12L12 5M5 12L12 19" stroke="#F8F8F9" stroke-width="2"
-                                        stroke-linecap="round" stroke-linejoin="round" />
-                                </svg>
-                            </button>
+                            </router-link>
                         </div>
                         <div class="matches">
-                            <div class="match">
+
+                            <router-link to="/match" class="match  w-100 h-100">
                                 <div class="head">
                                     <span class="day"> الأسبوع الحادي عشر </span>
                                     <div class="d-flex align-items-center gap-2">
@@ -129,7 +132,8 @@
 
                                 <div class="d-flex align-items-center justify-content-center flex-column mainn">
                                     <div class="clups">
-                                        <div class="d-flex align-items-center clup flex-column flex-xl-row flex-lg-row gap-3">
+                                        <div
+                                            class="d-flex align-items-center clup flex-column flex-xl-row flex-lg-row gap-3">
                                             <span> البنك الأهلي </span>
                                             <img src="../assets/images/clup9.png" alt="" />
                                         </div>
@@ -143,7 +147,8 @@
                                                 <div class="line"></div>
                                             </div>
                                         </div>
-                                        <div class="d-flex align-items-center clup flex-column flex-xl-row flex-lg-row gap-3">
+                                        <div
+                                            class="d-flex align-items-center clup flex-column flex-xl-row flex-lg-row gap-3">
                                             <span> البنك الأهلي </span>
                                             <img src="../assets/images/clup9.png" alt="" />
                                         </div>
@@ -193,8 +198,9 @@
                                         </defs>
                                     </svg>
                                 </div>
-                            </div>
-                            <div class="match">
+
+                            </router-link>
+                            <router-link to="/match" class="match  w-100 h-100">
                                 <div class="head">
                                     <span class="day"> الأسبوع الحادي عشر </span>
                                     <div class="d-flex align-items-center gap-2">
@@ -218,7 +224,8 @@
 
                                 <div class="d-flex align-items-center justify-content-center flex-column mainn">
                                     <div class="clups">
-                                        <div class="d-flex align-items-center clup flex-column flex-xl-row flex-lg-row gap-3">
+                                        <div
+                                            class="d-flex align-items-center clup flex-column flex-xl-row flex-lg-row gap-3">
                                             <span> البنك الأهلي </span>
                                             <img src="../assets/images/clup9.png" alt="" />
                                         </div>
@@ -236,7 +243,8 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="d-flex align-items-center clup flex-column flex-xl-row flex-lg-row gap-3">
+                                        <div
+                                            class="d-flex align-items-center clup flex-column flex-xl-row flex-lg-row gap-3">
                                             <span> البنك الأهلي </span>
                                             <img src="../assets/images/clup9.png" alt="" />
                                         </div>
@@ -268,8 +276,9 @@
                                         </defs>
                                     </svg>
                                 </div>
-                            </div>
-                            <div class="match">
+
+                            </router-link>
+                            <router-link to="/match" class="match  w-100 h-100">
                                 <div class="head">
                                     <span class="day"> الأسبوع الحادي عشر </span>
                                     <div class="d-flex align-items-center gap-2">
@@ -293,7 +302,8 @@
 
                                 <div class="d-flex align-items-center justify-content-center flex-column mainn">
                                     <div class="clups">
-                                        <div class="d-flex align-items-center flex-column flex-xl-row clup flex-lg-row gap-3">
+                                        <div
+                                            class="d-flex align-items-center clup flex-column flex-xl-row flex-lg-row gap-3">
                                             <span> البنك الأهلي </span>
                                             <img src="../assets/images/clup9.png" alt="" />
                                         </div>
@@ -311,7 +321,8 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="d-flex align-items-center flex-column flex-xl-row flex-lg-row clup gap-3">
+                                        <div
+                                            class="d-flex align-items-center clup flex-column flex-xl-row flex-lg-row gap-3">
                                             <span> البنك الأهلي </span>
                                             <img src="../assets/images/clup9.png" alt="" />
                                         </div>
@@ -343,7 +354,9 @@
                                         </defs>
                                     </svg>
                                 </div>
-                            </div>
+
+                            </router-link>
+
                         </div>
                     </div>
                 </div>

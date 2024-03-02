@@ -58,14 +58,17 @@
                         <div class="head-line-red">
                             <h4>مباريات يوم الأثنين 25/12/2023</h4>
 
-                            <button>
-                                <span clas> عرض المزيد </span>
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                                    fill="none">
-                                    <path d="M5 12H19M5 12L12 5M5 12L12 19" stroke="#F8F8F9" stroke-width="2"
-                                        stroke-linecap="round" stroke-linejoin="round" />
-                                </svg>
-                            </button>
+                            <router-link to="/league" class="">
+                                <button>
+                                    <span clas> عرض المزيد </span>
+                                    <svg class="mt-1" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                        viewBox="0 0 24 24" fill="none">
+                                        <path d="M5 12H19M5 12L12 5M5 12L12 19" stroke="#F8F8F9" stroke-width="2"
+                                            stroke-linecap="round" stroke-linejoin="round" />
+                                    </svg>
+                                </button>
+
+                            </router-link>
                         </div>
                         <div class="matches">
                             <div class="match">
@@ -593,7 +596,7 @@
                                 <h6> المباريات </h6>
                                 <div class="d-flex align-items-center justify-content-between w-100">
                                     <div class="d-flex align-items-center">
-                                        <h4> 167 </h4>
+                                        <h4> 167 <span style="font-size:20px; font-weight: 300;"> / 306</span> </h4>
                                     </div>
                                 </div>
 

@@ -1,18 +1,17 @@
 <template>
     <div>
-        <nav class="navbar-container">
+        <nav class="navbar-container" :class="{ 'active': activeNav }">
             <div class="main container">
                 <div class="toggle">
                     <div>
                         <button>
-                        
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                                fill="none">
+
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
                                 <path d="M3.9751 5.9751H19.9751M3.9751 11.9751H19.9751M3.9751 17.9751H19.9751"
                                     stroke="#B41618" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
                             </svg>
-                            
-                            </button>
+
+                        </button>
 
                         <v-overlay activator="parent" location-strategy="connected" scroll-strategy="reposition">
                             <div class="links-mobile">
@@ -74,9 +73,9 @@
                     </div>
                 </div>
                 <div class="logo">
-                <RouterLink to="/">
-                    <img src="../assets/images/kora-logo.png" alt="">
-                </RouterLink>
+                    <RouterLink to="/">
+                        <img src="../assets/images/kora-logo.png" alt="">
+                    </RouterLink>
                 </div>
                 <div class="links">
                     <RouterLink to="/">{{ $t('home') }}</RouterLink>
@@ -167,7 +166,7 @@
 <script setup>
 import { useRoute } from 'vue-router'
 let router = useRoute();
-import { ref } from 'vue';
+import { ref, onMounted } from 'vue';
 import { useI18n } from 'vue-i18n';
 const { locale, setLocale, localePath } = useI18n();
 
@@ -182,6 +181,18 @@ const changeLang = async () => {
     }
 
 };
+
+let activeNav = ref(false);
+onMounted(() => {
+    window.addEventListener("scroll", function () {
+        if (this.window.scrollY >= 300) {
+            activeNav.value = true;
+        } else if (window.scrollY == 0) {
+            activeNav.value = false;
+        }
+
+    });
+});
 
 </script>
 

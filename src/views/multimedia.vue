@@ -35,7 +35,9 @@
                                 spaceBetween: 10,
                             },
                         }" :modules="modules" class="boxes">
-                            <swiper-slide v-for="i in 8" class="video-card news">
+                            <swiper-slide v-for="i in 8"  >
+                            
+                            <router-link to="/videoNew" class="video-card news">
                                 <div class="video-container">
                                     <img src="../assets/images/video1.png" />
                                     <div class="overlay"></div>
@@ -61,21 +63,28 @@
                                 </div>
 
                                 <h5> تياجو ميسي يهدر ركلة جزاء بطريقة غريبة </h5>
+
+                                </router-link>
                             </swiper-slide>
                         </swiper>
-                        <button class="all-mobile">
-                            عرض المزيد
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-                                <path d="M5 12H19M5 12L12 5M5 12L12 19" stroke="#F8F8F9" stroke-width="2"
-                                    stroke-linecap="round" stroke-linejoin="round" />
-                            </svg>
-                        </button>
+
+                        <RouterLink to="/newsVideos">
+                            <button class="all-mobile">
+                                عرض المزيد
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                    fill="none">
+                                    <path d="M5 12H19M5 12L12 5M5 12L12 19" stroke="#F8F8F9" stroke-width="2"
+                                        stroke-linecap="round" stroke-linejoin="round" />
+                                </svg>
+                            </button>
+                        </RouterLink>
+
                     </div>
                 </div>
                 <div class="summary-container-home mt-3">
                     <div class="head-line-red">
                         <h4> ملخص المباريات </h4>
-                        <RouterLink to="/newsMatches">
+                        <RouterLink to="/newsVideos">
                             <button>
                                 عرض المزيد
                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
@@ -89,7 +98,7 @@
                     <div class="main mt-5">
                         <div class="row">
                             <div class="col-12 col-xl-6 col-lg-6">
-                                <div class="video-card sum-main">
+                                <router-link to="videoMatch" class="video-card sum-main">
                                     <div class="video-container">
                                         <img src="../assets/images/video1.png" />
                                         <div class="overlay"></div>
@@ -115,12 +124,14 @@
                                     </div>
 
                                     <h5> تياجو ميسي يهدر ركلة جزاء بطريقة غريبة </h5>
-                                </div>
+
+                                </router-link>
+
                             </div>
                             <div class="col-12 col-xl-6 col-lg-6 mob">
                                 <div class="row">
                                     <div v-for="i in 4" class="col-12 col-lg-6 col-xl-6 mb-3">
-                                        <div class="video-card sum">
+                                        <router-link to="videoMatch" class="video-card sum">
                                             <div class="video-container">
                                                 <img src="../assets/images/video1.png" />
                                                 <div class="overlay"></div>
@@ -147,7 +158,9 @@
                                             </div>
 
                                             <h5> تياجو ميسي يهدر ركلة جزاء بطريقة غريبة </h5>
-                                        </div>
+
+                                        </router-link>
+
                                     </div>
                                 </div>
                             </div>
@@ -194,13 +207,18 @@
                                 <h5> تياجو ميسي يهدر ركلة جزاء بطريقة غريبة </h5>
                             </swiper-slide>
                         </swiper>
-                        <button class="all-mobile">
-                            عرض المزيد
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-                                <path d="M5 12H19M5 12L12 5M5 12L12 19" stroke="#F8F8F9" stroke-width="2"
-                                    stroke-linecap="round" stroke-linejoin="round" />
-                            </svg>
-                        </button>
+
+                        <RouterLink to="/newsVideos">
+                            <button class="all-mobile">
+                                عرض المزيد
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                    fill="none">
+                                    <path d="M5 12H19M5 12L12 5M5 12L12 19" stroke="#F8F8F9" stroke-width="2"
+                                        stroke-linecap="round" stroke-linejoin="round" />
+                                </svg>
+                            </button>
+                        </RouterLink>
+
                     </div>
                 </div>
 

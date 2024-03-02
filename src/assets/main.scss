@@ -61,7 +61,8 @@
                     color: $black;
                     font-size: 18px;
                     font-style: normal;
-                    font-weight: 500;
+                    font-weight: 700;
+                    margin-bottom: 7px;
                     text-align: center;
                 }
                 .clups {
@@ -176,6 +177,28 @@
     }
 }
 
+.arrowss-container {
+    margin-top: 20px;
+    .arrow-left,
+    .arrow-right {
+        border-radius: 0px;
+        box-shadow: none !important;
+        right: auto !important;
+        left: auto !important;
+        transition: 0.4s all;
+    }
+    .arroww {
+        cursor: pointer;
+        &:hover {
+            svg {
+                stroke: $mainColor;
+                path {
+                    stroke: $mainColor;
+                }
+            }
+        }
+    }
+}
 // end matches home
 
 // start opinions container (home)
@@ -269,7 +292,7 @@
                 position: relative;
                 border-radius: 8px;
                 width: 45%;
-                min-height: 250px;
+                min-height: 295px;
                 img {
                     border-radius: 8px;
                     width: 100%;
@@ -311,6 +334,7 @@
                 gap: 20px;
                 h6 {
                     line-height: 30px;
+                    font-weight: 700;
                 }
                 p {
                     line-height: 30px;
@@ -388,10 +412,13 @@
                     span {
                         font-size: 16px;
                         font-style: normal;
-                        font-weight: 500;
                         color: $black;
                     }
+                    h6 {
+                        font-weight: 700;
+                    }
                 }
+
                 .time {
                     display: flex;
                     align-items: center;
@@ -432,7 +459,7 @@
                     h6 {
                         font-size: 16px;
                         font-style: normal;
-                        font-weight: 400;
+                        font-weight: 700;
                         margin: 0;
                     }
                     span {
@@ -476,6 +503,9 @@
             justify-content: center;
             background-color: $mainColor;
             padding: 8px;
+            svg {
+                margin-top: 9px;
+            }
             h5 {
                 color: $white;
                 font-size: 18px;
@@ -545,6 +575,7 @@
                     position: absolute;
                     top: 120%;
                     width: 100%;
+                    z-index: 111;
                     height: 230px;
                     border-bottom: 1px solid $grey;
                     background: $cards;
@@ -833,23 +864,24 @@
 
 .news-page {
     margin-top: 50px;
-    .show-more-btn {
+}
+
+.show-more-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10px;
+    width: 100%;
+    button {
         display: flex;
-        align-items: center;
+        width: 192px;
+        padding: 2px 8px 7px 8px;
         justify-content: center;
-        margin-top: 10px;
-        width: 100%;
-        button {
-            display: flex;
-            width: 192px;
-            padding: 2px 8px 7px 8px;
-            justify-content: center;
-            align-items: center;
-            gap: 8px;
-            background-color: $mainColor;
-            color: $white;
-            border-radius: 4px;
-        }
+        align-items: center;
+        gap: 8px;
+        background-color: $mainColor;
+        color: $white;
+        border-radius: 4px;
     }
 }
 
@@ -1095,8 +1127,9 @@
             .main-img {
                 width: 80px;
                 height: 93px;
-                object-fit: contain;
+                object-fit: cover;
                 border-radius: 5px;
+                // background-color: red;
             }
         }
     }
@@ -1480,6 +1513,97 @@ table {
             border-radius: 4px;
             background-color: $mainColor;
             color: $white;
+        }
+    }
+}
+
+.video-page {
+    margin-top: 40px;
+    .main {
+        h3 {
+            font-size: 20px;
+            font-style: normal;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+        .image-container {
+            height: 560px;
+            border-radius: 19px;
+            position: relative;
+            img {
+                border-radius: 16px;
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                // display: none;
+            }
+            .icon {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translateX(-50%) translateY(-50%);
+                z-index: 11;
+                cursor: pointer;
+            }
+            .text-container {
+                z-index: 11;
+                position: absolute;
+                bottom: 15px;
+                left: 15px;
+                display: flex;
+                align-items: center;
+                gap: 20px;
+                .text {
+                    span {
+                        font-size: 14px;
+                        font-style: normal;
+                        font-weight: 300;
+                        color: $white;
+                    }
+                }
+                .time {
+                    display: flex;
+                    align-items: center;
+                    gap: 5px;
+                    border-radius: 5px;
+                    background-color: $white;
+                    cursor: pointer;
+                    span {
+                        font-size: 13px;
+                        color: $black;
+                        padding: 0px 3px;
+                        font-weight: 700;
+                    }
+                }
+            }
+            border-bottom: 5px solid $mainColor;
+            // background-image: url("./images/video1.png");
+            // background-position: center;
+            // background-repeat: no-repeat;
+            // background-size: cover;
+            &::after {
+                // content: "";
+                // width: 100%;
+                // height: 8px;
+                // background-color: $mainColor;
+                // position: absolute;
+                // top: 99%;
+                // right: 0;
+                // left: 0;
+                // border-bottom-left-radius: 40px;
+                // border-bottom-right-radius: 16px;
+            }
+            &::before {
+                content: "";
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                border-radius: 16px;
+                top: 0;
+                right: 0;
+                left: 0;
+                background: linear-gradient(180deg, rgba(33, 33, 33, 0) 0%, #212121 100%);
+            }
         }
     }
 }
