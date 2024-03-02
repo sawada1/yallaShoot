@@ -194,6 +194,17 @@
     }
 }
 
+@media (max-width: 1010px) {
+    .navbar-container {
+        .links {
+            a {
+                color: $white;
+                font-size: 14px !important;
+            }
+        }
+    }
+}
+
 @media (max-width: 1115px) {
     .navbar-container {
         .main {
