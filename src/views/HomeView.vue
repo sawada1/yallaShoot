@@ -85,7 +85,8 @@ let activeBtn = ref(2);
                   <div class="watch">
                     <div class="d-flex align-items-center gap-2">
                       <span class="watch-span"> شاهد المباراة </span>
-                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="17" viewBox="0 0 16 17" fill="none">
+                      <svg class="mt-1" xmlns="http://www.w3.org/2000/svg" width="16" height="17" viewBox="0 0 16 17"
+                        fill="none">
                         <path fill-rule="evenodd" clip-rule="evenodd"
                           d="M7.99961 14.9C9.69699 14.9 11.3249 14.2257 12.5251 13.0255C13.7253 11.8252 14.3996 10.1974 14.3996 8.49998C14.3996 6.80259 13.7253 5.17473 12.5251 3.97449C11.3249 2.77426 9.69699 2.09998 7.99961 2.09998C6.30222 2.09998 4.67436 2.77426 3.47413 3.97449C2.27389 5.17473 1.59961 6.80259 1.59961 8.49998C1.59961 10.1974 2.27389 11.8252 3.47413 13.0255C4.67436 14.2257 6.30222 14.9 7.99961 14.9ZM7.64361 6.23438C7.52313 6.15399 7.38309 6.10782 7.23842 6.1008C7.09376 6.09377 6.9499 6.12615 6.8222 6.19448C6.69449 6.2628 6.58773 6.36452 6.51331 6.48877C6.43889 6.61302 6.39959 6.75514 6.39961 6.89998V10.1C6.39959 10.2448 6.43889 10.3869 6.51331 10.5112C6.58773 10.6354 6.69449 10.7371 6.8222 10.8055C6.9499 10.8738 7.09376 10.9062 7.23842 10.8992C7.38309 10.8921 7.52313 10.846 7.64361 10.7656L10.0436 9.16558C10.1532 9.09252 10.243 8.99354 10.3051 8.87743C10.3673 8.76132 10.3998 8.63167 10.3998 8.49998C10.3998 8.36829 10.3673 8.23863 10.3051 8.12252C10.243 8.00641 10.1532 7.90743 10.0436 7.83438L7.64361 6.23438Z"
                           fill="#B41618" />
@@ -120,7 +121,7 @@ let activeBtn = ref(2);
             </svg>
           </div>
 
-          <div class="d-flex align-items-center justify-content-center arrowss-container gap-3">
+          <div class="d-none d-xl-flex d-lg-flex align-items-center justify-content-center arrowss-container gap-3">
 
             <div class="arroww arrow-right">
               <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
@@ -138,13 +139,18 @@ let activeBtn = ref(2);
           </div>
 
         </div>
-        <button class="all-mobile">
-          جميع المباريات
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-            <path d="M5 12H19M5 12L12 5M5 12L12 19" stroke="#F8F8F9" stroke-width="2" stroke-linecap="round"
-              stroke-linejoin="round" />
-          </svg>
-        </button>
+
+        <router-link to="/matches" class="d-flex align-items-center gap-2">
+                <button class="all-mobile">
+            جميع المباريات
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+              <path d="M5 12H19M5 12L12 5M5 12L12 19" stroke="#F8F8F9" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round" />
+            </svg>
+          </button>
+
+              </router-link>
+       
         <!-- <div class="boxes">
         <div class="box">
           <h5>دوري أبطال أوروبا</h5>
@@ -300,6 +306,10 @@ let activeBtn = ref(2);
                     <img src="../assets/images/person.png" alt="">
                     <div class="flow-text">
                       <span> الدوري السعودي </span>
+                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                        <path d="M3.33325 8.00004H12.6666M3.33325 8.00004L7.99992 3.33337M3.33325 8.00004L7.99992 12.6667"
+                          stroke="#F8F8F9" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                      </svg>
                     </div>
                   </div>
                   <div class="text">
@@ -666,32 +676,32 @@ let activeBtn = ref(2);
               spaceBetween: 10,
             },
           }" :modules="modules" class="boxes">
-            <swiper-slide v-for="i in 8" >
-            <router-link to="/videoMatch" class="video-card sum">
-              <div class="video-container">
-                <img src="../assets/images/video1.png" />
-                <div class="overlay"></div>
-                <div class="icon">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="124" height="124" viewBox="0 0 124 124" fill="none">
-                    <path
-                      d="M48.9441 92.7071L48.9397 92.71C48.1409 93.2291 47.3608 93.4889 46.5938 93.5169C45.8273 93.5449 45.0396 93.3427 44.2231 92.8844L44.2228 92.8842C43.4078 92.4273 42.8171 91.8583 42.4274 91.1833C42.0374 90.5076 41.833 89.6983 41.833 88.7375V35.2625C41.833 33.3719 42.6213 32.0117 44.223 31.1106C45.0391 30.6541 45.8268 30.4531 46.5933 30.4818C47.3605 30.5106 48.1408 30.7708 48.9397 31.2901L48.9397 31.2901L48.9442 31.2929L91.0476 58.0273C92.4527 58.9658 93.1455 60.2712 93.1455 62C93.1455 63.7288 92.4527 65.0341 91.0477 65.9726L48.9441 92.7071Z"
-                      fill="#B7B7B7" stroke="#F8F8F9" />
-                  </svg>
+            <swiper-slide v-for="i in 8">
+              <router-link to="/videoMatch" class="video-card sum">
+                <div class="video-container">
+                  <img src="../assets/images/video1.png" />
+                  <div class="overlay"></div>
+                  <div class="icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="124" height="124" viewBox="0 0 124 124" fill="none">
+                      <path
+                        d="M48.9441 92.7071L48.9397 92.71C48.1409 93.2291 47.3608 93.4889 46.5938 93.5169C45.8273 93.5449 45.0396 93.3427 44.2231 92.8844L44.2228 92.8842C43.4078 92.4273 42.8171 91.8583 42.4274 91.1833C42.0374 90.5076 41.833 89.6983 41.833 88.7375V35.2625C41.833 33.3719 42.6213 32.0117 44.223 31.1106C45.0391 30.6541 45.8268 30.4531 46.5933 30.4818C47.3605 30.5106 48.1408 30.7708 48.9397 31.2901L48.9397 31.2901L48.9442 31.2929L91.0476 58.0273C92.4527 58.9658 93.1455 60.2712 93.1455 62C93.1455 63.7288 92.4527 65.0341 91.0477 65.9726L48.9441 92.7071Z"
+                        fill="#B7B7B7" stroke="#F8F8F9" />
+                    </svg>
+                  </div>
+                  <div class="time">
+                    <span>10:00</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                      <path d="M0 4C0 1.79086 1.79086 0 4 0H24V24H4C1.79086 24 0 22.2091 0 20V4Z" fill="#212121" />
+                      <path
+                        d="M9.525 18.025C9.19167 18.2417 8.854 18.254 8.512 18.062C8.17067 17.8707 8 17.575 8 17.175V6.82499C8 6.42499 8.17067 6.12899 8.512 5.93699C8.854 5.74566 9.19167 5.75832 9.525 5.97499L17.675 11.15C17.975 11.35 18.125 11.6333 18.125 12C18.125 12.3667 17.975 12.65 17.675 12.85L9.525 18.025Z"
+                        fill="#B41618" />
+                    </svg>
+                  </div>
                 </div>
-                <div class="time">
-                  <span>10:00</span>
-                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-                    <path d="M0 4C0 1.79086 1.79086 0 4 0H24V24H4C1.79086 24 0 22.2091 0 20V4Z" fill="#212121" />
-                    <path
-                      d="M9.525 18.025C9.19167 18.2417 8.854 18.254 8.512 18.062C8.17067 17.8707 8 17.575 8 17.175V6.82499C8 6.42499 8.17067 6.12899 8.512 5.93699C8.854 5.74566 9.19167 5.75832 9.525 5.97499L17.675 11.15C17.975 11.35 18.125 11.6333 18.125 12C18.125 12.3667 17.975 12.65 17.675 12.85L9.525 18.025Z"
-                      fill="#B41618" />
-                  </svg>
-                </div>
-              </div>
 
-              <h5> تياجو ميسي يهدر ركلة جزاء بطريقة غريبة </h5>
-            
-            </router-link>
+                <h5> تياجو ميسي يهدر ركلة جزاء بطريقة غريبة </h5>
+
+              </router-link>
             </swiper-slide>
           </swiper>
           <router-link to="/newsMatches" class="h-100">
@@ -940,13 +950,13 @@ let activeBtn = ref(2);
             </div>
 
           </div>
-          <button class="all-mobile">
+          <!-- <button class="all-mobile">
             عرض المزيد
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
               <path d="M5 12H19M5 12L12 5M5 12L12 19" stroke="#F8F8F9" stroke-width="2" stroke-linecap="round"
                 stroke-linejoin="round" />
             </svg>
-          </button>
+          </button> -->
         </div>
       </div>
 

@@ -269,6 +269,9 @@
         }
     }
 }
+.v-overlay {
+    z-index: 555555 !important;
+}
 .links-mobile {
     position: fixed;
     top: 0 !important;
@@ -276,6 +279,7 @@
     right: 0;
     width: 300px;
     height: 100vh;
+    // z-index: 555555 !important;
     background-color: $mainColor;
     // background: linear-gradient(180deg, #de2022 0%, #2c0607 99.99%);
     // background-color: red;

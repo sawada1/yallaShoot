@@ -124,7 +124,7 @@
                     }
                     .watch {
                         display: flex;
-                        align-items: center;
+                        // align-items: center;
                         gap: 10px;
                         .watch-span {
                             font-size: 14px;
@@ -139,6 +139,13 @@
                             height: 24px;
                         }
                         .time {
+                            margin-top: 2px;
+                            display: flex;
+                            align-items: center;
+                            gap: 5px;
+                            svg {
+                                margin-top: 3px;
+                            }
                             span {
                                 font-size: 14px;
                                 font-style: normal;
@@ -313,6 +320,9 @@
                     gap: 8px;
                     color: $white;
                     font-size: 15px;
+                    svg {
+                        display: none;
+                    }
                 }
                 &::before {
                     content: "";
@@ -1708,3 +1718,112 @@ table {
         }
     }
 }
+
+// start mobile spacing
+
+@media (max-width: 770px) {
+    .matches-home {
+        margin-top: 16px;
+    }
+    .opinions-container-home {
+        margin-top: 24px;
+    }
+    .addds-row {
+        margin: 24px 0px;
+    }
+    .news-container-home {
+        margin-bottom: 24px;
+        .main {
+            margin-top: 20px;
+        }
+        .col-12 {
+            margin: 0px 0px !important;
+            .news-card {
+                margin: 0px 0px;
+                margin-bottom: 17px;
+                .text-flow {
+                    display: none;
+                }
+            }
+        }
+        .main-box {
+            min-height: fit-content !important;
+            height: fit-content !important;
+            .img-container {
+                height: 180px !important;
+                min-height: 180px !important;
+                img {
+                    object-fit: cover;
+                }
+            }
+            .text {
+                gap: 15px !important;
+                h6 {
+                    font-size: 18px;
+                }
+            }
+            .flow-text {
+                display: flex;
+                align-items: center;
+                background-color: transparent !important;
+                left: auto !important;
+                right: 10px;
+                svg {
+                    margin-top: 5px;
+                    display: block !important;
+                }
+            }
+        }
+    }
+    .video-card {
+        &.sum-main {
+            .video-container {
+                height: 249px;
+            }
+        }
+        &.sum,
+        &.news {
+            h5 {
+                background-color: $cards;
+            }
+        }
+    }
+    .stat-container-home {
+        .main {
+            margin-top: 24px !important;
+        }
+    }
+    .videos-container-home .boxes {
+        margin-top: 10px;
+    }
+    .summary-container-home {
+        .main {
+            margin-top: 20px !important;
+        }
+    }
+    table {
+        text-align: center;
+        width: 550px !important;
+        tr {
+            th {
+                background-color: $black !important;
+                color: $white !important;
+                padding: 15px;
+            }
+        }
+        td {
+            text-align: center;
+            padding: 15px;
+            color: $black !important;
+            font-size: 16px;
+            &.act {
+                background-color: $cards;
+            }
+            .image {
+                justify-content: center;
+            }
+        }
+    }
+}
+
+// end mobile spacing
