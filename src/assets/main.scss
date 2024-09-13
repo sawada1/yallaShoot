@@ -144,7 +144,7 @@
                             align-items: center;
                             gap: 5px;
                             svg {
-                                margin-top: 3px;
+                                margin-top: 2px;
                             }
                             span {
                                 font-size: 14px;
@@ -183,9 +183,13 @@
         }
     }
 }
-
+.img-circle {
+    width: 100px; /* Adjust the size as needed */
+    height: 100px; /* Keep it equal to width for the circle */
+    border-radius: 50%;
+   }
 .arrowss-container {
-    margin-top: 20px;
+    margin-top: 5px;
     .arrow-left,
     .arrow-right {
         border-radius: 0px;
@@ -211,7 +215,7 @@
 // start opinions container (home)
 
 .opinions-container-home {
-    margin-top: 48px;
+    margin-top: 30px;
     .row {
         margin-top: 30px;
     }
@@ -291,9 +295,11 @@
             display: flex;
             gap: 10px;
             padding: 10px;
+            height: 319px;
+
             border-radius: 8px;
             background: $cards;
-            min-height: 305px;
+            min-height: 302px;
             box-shadow: 0px 4px 4px 0px rgba(164, 164, 164, 0.25);
             .img-container {
                 position: relative;
@@ -342,6 +348,7 @@
                 height: 100%;
                 width: 57%;
                 gap: 20px;
+             
                 h6 {
                     line-height: 30px;
                     font-weight: 700;
@@ -354,7 +361,7 @@
                 .tags {
                     .line {
                         width: 1px;
-                        height: 12px;
+                        height: 13px;
                         background: #7a7a7a;
                     }
                     span {
@@ -393,6 +400,143 @@
 // start stat-container-home
 
 .stat-container-home {
+    .box {
+        border-radius: 8px;
+        background: $cards;
+        box-shadow: 0px 4px 4px 0px rgba(164, 164, 164, 0.25);
+        .head {
+            border-radius: 8px 8px 0px 0px;
+        }
+        .body {
+            height: 350px;
+            overflow-y: auto;
+            .matches,
+            .players {
+            }
+            .match {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                width: 100%;
+                border-bottom: 1px solid $grey;
+                padding: 10px;
+                padding-bottom: 8px;
+                .image {
+                    display: flex;
+                    align-items: center;
+                    flex-direction: column;
+                    gap: 5px;
+                    span {
+                        font-size: 16px;
+                        font-style: normal;
+                        color: $black;
+                    }
+                    h6 {
+                        font-weight: 700;
+                    }
+                }
+
+                .time {
+                    display: flex;
+                    align-items: center;
+                    flex-direction: column;
+                    gap: 5px;
+                    h6 {
+                        margin: 0;
+                        font-size: 18px;
+                        font-style: normal;
+                        font-weight: 700;
+                    }
+                    span {
+                        color: $grey;
+                        font-size: 14px;
+                        font-style: normal;
+                        font-weight: 400;
+                    }
+                }
+            }
+            .players {
+                border-bottom: 1px solid $grey;
+                padding: 10px;
+                padding-bottom: 8px;
+                display: flex;
+                align-items: center;
+                width: 100%;
+                justify-content: space-between;
+                .img-container {
+                    display: flex;
+                    align-items: center;
+                    gap: 10px;
+                    img {
+                        width: 56px;
+                        height: 75px;
+                        object-fit: contain;
+                        border-radius: 10px;
+                    }
+                    h6 {
+                        font-size: 16px;
+                        font-style: normal;
+                        font-weight: 700;
+                        margin: 0;
+                    }
+                    span {
+                        font-size: 16px;
+                        font-style: normal;
+                        font-weight: 300;
+                        color: $grey2;
+                    }
+                }
+                .goals {
+                    color: $white;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    width: 40px;
+                    // height: 40px;
+                    padding: 2px 0px;
+                    border-radius: 4px;
+                    background: $mainColor;
+                    h6 {
+                        font-size: 16px;
+                        font-style: normal;
+                        font-weight: 700;
+                        color: $white;
+                        margin: 0;
+                    }
+                    span {
+                        color: $white !important;
+                        font-size: 14px;
+                        font-style: normal;
+                        font-weight: 300;
+                    }
+                }
+            }
+        }
+        .foot,
+        .head {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: $mainColor;
+            padding: 8px;
+            svg {
+                margin-top: 9px;
+            }
+            h5 {
+                color: $white;
+                font-size: 18px;
+                font-style: normal;
+                font-weight: 700;
+            }
+        }
+        .foot {
+            border-radius: 0px 0px 8px 8px;
+        }
+    }
+}
+
+.transfer-container-home{
     .box {
         border-radius: 8px;
         background: $cards;
@@ -876,6 +1020,12 @@
     margin-top: 50px;
 }
 
+.sub-text{
+    margin-top: -16px;
+    height: 140px;
+    overflow: hidden;
+}
+
 .show-more-btn {
     display: flex;
     align-items: center;
@@ -1162,7 +1312,9 @@ table {
         color: $black !important;
         font-size: 16px;
         &.act {
+          
             background-color: $cards;
+            text-align: center;
         }
         .image {
             justify-content: center;
@@ -1344,6 +1496,7 @@ table {
                 width: 100%;
                 display: flex;
                 align-items: center;
+                gap: 50;
                 justify-content: space-between;
                 padding: 13px 20px;
                 &:not(:last-child) {
@@ -1354,10 +1507,10 @@ table {
                     width: 1px;
                     height: 30px;
                     background-color: $grey;
+                    margin-left: 70px;
                 }
                 .box {
-                    width: 450px;
-
+                    width: 100%;
                     display: flex;
                     align-items: center;
                     justify-content: space-between;
@@ -1365,7 +1518,17 @@ table {
                         font-size: 16px;
                         font-weight: 400;
                         color: $grey2;
+                        
                         &.act {
+                            width: 100%;
+                            // overflow: scroll;
+                            color: $black;
+                            font-weight: 700;
+                        }
+                        &.act2 {
+                            width: 50%;
+
+                            justify-self:end;
                             color: $black;
                             font-weight: 700;
                         }
@@ -1725,9 +1888,7 @@ table {
     .matches-home {
         margin-top: 16px;
     }
-    .opinions-container-home {
-        margin-top: 24px;
-    }
+ 
     .addds-row {
         margin: 24px 0px;
     }
@@ -1793,6 +1954,12 @@ table {
             margin-top: 24px !important;
         }
     }
+    .transfer-container-home {
+        .main {
+            margin-top: 24px !important;
+        }
+    }
+    
     .videos-container-home .boxes {
         margin-top: 10px;
     }
@@ -1818,6 +1985,8 @@ table {
             font-size: 16px;
             &.act {
                 background-color: $cards;
+                                    width: 50%;
+                            overflow: hidden;
             }
             .image {
                 justify-content: center;

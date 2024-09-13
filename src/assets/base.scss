@@ -12,7 +12,7 @@ $grey2: #7a7a7a;
 $cards: #f2f2f2;
 $black: #212121;
 $green: #0cb14e;
-$margin-bottom: 50px;
+$margin-bottom: 30px;
 $lightBlue: rgba(35, 20, 93, 0.35);
 a {
     color: inherit;
@@ -167,6 +167,8 @@ button {
     background-color: $cards;
     box-shadow: 0px 4px 4px 0px rgba(164, 164, 164, 0.25);
     transition: 0.4s;
+    height: 320px;
+    overflow: hidden;
     // border: 1px solid $grey;
     border-width: 1px;
     border-style: solid;
@@ -179,7 +181,13 @@ button {
     }
     .text {
         padding: 8px;
+        
     }
+
+  
+      
+ 
+      
     .img-container {
         height: 140px;
         width: 100%;
@@ -309,18 +317,17 @@ button {
 }
 
 .video-card {
-    border-radius: 8px;
+      border-radius: 8px;
     background-color: $cards;
     box-shadow: 0px 4px 4px 0px rgba(164, 164, 164, 0.25);
-    //  height: 469px;
-    &.news {
+     &.news {
         .video-container {
-            height: 350px;
+            height: 50px;
         }
     }
     &.sum-main {
         .video-container {
-            height: 430px;
+            height: 410px;
         }
     }
     &.sum {
@@ -345,7 +352,7 @@ button {
             top: 100%;
             background-color: $mainColor;
             width: 100%;
-            height: 4px;
+            height: 5px;
         }
         .time {
             position: absolute;
@@ -393,11 +400,13 @@ button {
         }
     }
     h5 {
+        height: 80px;
         padding: 14px 8px;
         font-size: 16px;
         font-style: normal;
         font-weight: 700;
         line-height: 25px;
+        overflow: scroll;
     }
 }
 
@@ -453,12 +462,12 @@ button {
             align-items: center;
             justify-content: center;
             border-radius: 0px 4px 4px 0px;
-            background: $grey;
+            background: $mainColor;
             position: absolute;
             left: 0;
             bottom: 5px;
             span {
-                color: $black;
+                color: $white;
                 font-size: 14px;
                 font-style: normal;
                 font-weight: 300;

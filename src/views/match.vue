@@ -22,9 +22,10 @@
                         <span class="time"> 30 ديسمبر 2023 | 09:37 ص</span>
 
                         <div class="clups">
-                            <div class="image d-flex align-item-center gap-3 flex-column flex-xl-row flex-lg-row">
-                                <h5> الفتح </h5>
-                                <img src="../assets/images/clup3.png" alt="">
+                            <div class="image d-flex align-item-center gap-3 flex-column flex-xl-row flex-lg-row ">
+                                <img  src="../assets/images/clup3.png" alt="">
+
+                                <h5 class="mt-1"> الفتح </h5>
                             </div>
                             <div class="score">
                                 <div>
@@ -36,7 +37,7 @@
                                 </div>
                             </div>
                             <div class="image d-flex align-item-center gap-3 flex-column flex-xl-row flex-lg-row">
-                                <h5> الأخدود </h5>
+                                <h5 class="mt-1"> الأخدود </h5>
                                 <img src="../assets/images/clup4.png" alt="">
                             </div>
                         </div>
@@ -284,7 +285,7 @@
                     <div class="details">
                         <div v-for="i in 5" class="main-box ">
                             <div class="mobile-box d-block d-xl-none d-lg-none">
-                                <div class="d-flex text w-100 align-items-center justify-content-between">
+                                <div class="d-flex text w-100 align-items-center justify-content-center gap-5">
                                     <span> 30 ديسمبر 2023 </span>
                                     <span> الدوري السعودي </span>
                                 </div>
@@ -301,16 +302,16 @@
                                 </div>
                             </div>
                             <div class="boxes d-none d-xl-flex d-lg-flex w-100 align-items-center justify-content-between">
-                                <div class="box">
-                                    <span> 30 ديسمبر 2023 </span>
+                                <div class="box text-center">
+                                    <span style="width: 100%;"> 30 ديسمبر 2023 </span>
                                     <span class="act"> الفتح </span>
                                     <span class="act"> 2 </span>
                                 </div>
                                 <div class="divider d-none d-xl-block d-lg-block"></div>
-                                <div class="box">
+                                <div class="box text-center">
                                     <span> 0 </span>
-                                    <span class="act"> الفتح </span>
-                                    <span class="act"> الدوري السعودي </span>
+                                    <span class="act"> ريال مدريد </span>
+                                    <span class="act2 "> الدوري السعودي </span>
                                 </div>
 
                             </div>

@@ -1,10 +1,10 @@
 <script setup>
-import { Swiper, SwiperSlide } from 'swiper/vue';
+import { Swiper, SwiperSlide } from "swiper/vue";
 
-import 'swiper/css';
-import { Navigation } from 'swiper/modules';
+import "swiper/css";
+import { Navigation } from "swiper/modules";
 
-import { ref, onMounted } from 'vue'
+import { ref, onMounted } from "vue";
 
 let modules = ref([Navigation]);
 let activeBtn = ref(2);
@@ -12,66 +12,103 @@ let activeBtn = ref(2);
 
 <template>
   <div>
-
     <div class="custom-container">
       <div class="matches-home">
         <div class="header">
           <div class="btns">
-            <button @click="activeBtn = 1" class="stroke" :class="{ 'fill': activeBtn == 1 }">مباريات الأمس</button>
-            <button button @click="activeBtn = 2" class="stroke" :class="{ 'fill': activeBtn == 2 }"> مباريات اليوم
+            <button
+              @click="activeBtn = 1"
+              class="stroke"
+              :class="{ fill: activeBtn == 1 }"
+            >
+              مباريات الأمس
             </button>
-            <button button @click="activeBtn = 3" class="stroke" :class="{ 'fill': activeBtn == 3 }"> مباريات الغد
+            <button
+              button
+              @click="activeBtn = 2"
+              class="stroke"
+              :class="{ fill: activeBtn == 2 }"
+            >
+              مباريات اليوم
+            </button>
+            <button
+              button
+              @click="activeBtn = 3"
+              class="stroke"
+              :class="{ fill: activeBtn == 3 }"
+            >
+              مباريات الغد
             </button>
           </div>
           <div class="all">
             <router-link to="/matches" class="d-flex align-items-center gap-2">
               <span>جميع المباريات</span>
-              <svg class="mt-1" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-                <path d="M5 12H19M5 12L12 5M5 12L12 19" stroke="#B41618" stroke-width="2" stroke-linecap="round"
-                  stroke-linejoin="round" />
+              <svg
+                class="mt-1"
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+              >
+                <path
+                  d="M5 12H19M5 12L12 5M5 12L12 19"
+                  stroke="#B41618"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
               </svg>
-
             </router-link>
           </div>
         </div>
         <div class="swiper-container time">
-          <swiper :slidesPerView="1" :spaceBetween="10" :navigation="{
-            nextEl: '.arrow-right',
-            prevEl: '.arrow-left',
-          }" :breakpoints="{
-  '300': {
-    slidesPerView: 1,
-    spaceBetween: 20,
-  },
-  '1024': {
-    slidesPerView: 3,
-    spaceBetween: 10,
-  },
-  '1200': {
-    slidesPerView: 4,
-    spaceBetween: 10,
-  },
-}" :modules="modules" class="boxes">
+          <swiper
+            :slidesPerView="1"
+            :spaceBetween="10"
+            :navigation="{
+              nextEl: '.arrow-right',
+              prevEl: '.arrow-left',
+            }"
+            :breakpoints="{
+              '300': {
+                slidesPerView: 1,
+                spaceBetween: 20,
+              },
+              '1024': {
+                slidesPerView: 3,
+                spaceBetween: 10,
+              },
+              '1200': {
+                slidesPerView: 4,
+                spaceBetween: 10,
+              },
+            }"
+            :modules="modules"
+            class="boxes"
+          >
             <swiper-slide v-for="i in 8" class="h-100">
               <router-link to="/match" class="box h-100">
-
                 <h5>دوري أبطال أوروبا</h5>
                 <div class="clups d-flex flex-column gap-3">
-                  <div class="clup w-100 d-flex align-items-center  justify-content-between">
+                  <div
+                    class="clup w-100 d-flex align-items-center justify-content-between"
+                  >
                     <div class="d-flex align-items-center gap-3">
-                      <img src="../assets/images/clup1.png" alt="">
-                      <p class=""> إيندهوفن </p>
+                      <img src="../assets/images/clup1.png" alt="" />
+                      <p class="">إيندهوفن</p>
                     </div>
                     <span class="num">4</span>
                   </div>
-                  <div class="clup w-00 d-flex align-items-center justify-content-between">
+                  <div
+                    class="clup w-00 d-flex align-items-center justify-content-between"
+                  >
                     <div class="d-flex align-items-center gap-3">
-                      <img src="../assets/images/clup1.png" alt="">
-                      <p> إيندهوفن </p>
+                      <img src="../assets/images/clup1.png" alt="" />
+                      <p>إيندهوفن</p>
                     </div>
                     <span class="">4</span>
                   </div>
-
                 </div>
 
                 <div class="status">
@@ -82,75 +119,145 @@ let activeBtn = ref(2);
               <span>جارية الآن</span>
             </div> -->
                   <!-- <span class="end"> انتهت </span> -->
-                  <div class="watch">
+                  <div
+                    class="watch d-flex justify-content-center align-items-center"
+                  >
                     <div class="d-flex align-items-center gap-2">
                       <span class="watch-span"> شاهد المباراة </span>
-                      <svg class="mt-1" xmlns="http://www.w3.org/2000/svg" width="16" height="17" viewBox="0 0 16 17"
-                        fill="none">
-                        <path fill-rule="evenodd" clip-rule="evenodd"
+                      <svg
+                        class="mt-1"
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="16"
+                        height="17"
+                        viewBox="0 0 16 17"
+                        fill="none"
+                      >
+                        <path
+                          fill-rule="evenodd"
+                          clip-rule="evenodd"
                           d="M7.99961 14.9C9.69699 14.9 11.3249 14.2257 12.5251 13.0255C13.7253 11.8252 14.3996 10.1974 14.3996 8.49998C14.3996 6.80259 13.7253 5.17473 12.5251 3.97449C11.3249 2.77426 9.69699 2.09998 7.99961 2.09998C6.30222 2.09998 4.67436 2.77426 3.47413 3.97449C2.27389 5.17473 1.59961 6.80259 1.59961 8.49998C1.59961 10.1974 2.27389 11.8252 3.47413 13.0255C4.67436 14.2257 6.30222 14.9 7.99961 14.9ZM7.64361 6.23438C7.52313 6.15399 7.38309 6.10782 7.23842 6.1008C7.09376 6.09377 6.9499 6.12615 6.8222 6.19448C6.69449 6.2628 6.58773 6.36452 6.51331 6.48877C6.43889 6.61302 6.39959 6.75514 6.39961 6.89998V10.1C6.39959 10.2448 6.43889 10.3869 6.51331 10.5112C6.58773 10.6354 6.69449 10.7371 6.8222 10.8055C6.9499 10.8738 7.09376 10.9062 7.23842 10.8992C7.38309 10.8921 7.52313 10.846 7.64361 10.7656L10.0436 9.16558C10.1532 9.09252 10.243 8.99354 10.3051 8.87743C10.3673 8.76132 10.3998 8.63167 10.3998 8.49998C10.3998 8.36829 10.3673 8.23863 10.3051 8.12252C10.243 8.00641 10.1532 7.90743 10.0436 7.83438L7.64361 6.23438Z"
-                          fill="#B41618" />
+                          fill="#B41618"
+                        />
                       </svg>
                     </div>
-                    <div class="line"> </div>
+                    <div class="line mt-1"></div>
                     <div class="time">
-                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="17" viewBox="0 0 16 17" fill="none">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="16"
+                        height="17"
+                        viewBox="0 0 16 17"
+                        fill="none"
+                      >
                         <path
                           d="M8.00065 1.83337C7.12517 1.83337 6.25827 2.00581 5.44943 2.34084C4.64059 2.67588 3.90566 3.16694 3.28661 3.786C2.03636 5.03624 1.33398 6.73193 1.33398 8.50004C1.33398 10.2682 2.03636 11.9638 3.28661 13.2141C3.90566 13.8331 4.64059 14.3242 5.44943 14.6592C6.25827 14.9943 7.12517 15.1667 8.00065 15.1667C9.76876 15.1667 11.4645 14.4643 12.7147 13.2141C13.9649 11.9638 14.6673 10.2682 14.6673 8.50004C14.6673 7.62456 14.4949 6.75765 14.1598 5.94882C13.8248 5.13998 13.3338 4.40505 12.7147 3.786C12.0956 3.16694 11.3607 2.67588 10.5519 2.34084C9.74304 2.00581 8.87613 1.83337 8.00065 1.83337ZM10.8007 11.3L7.33398 9.16671V5.16671H8.33398V8.63337L11.334 10.4334L10.8007 11.3Z"
-                          fill="#B7B7B7" />
+                          fill="#B7B7B7"
+                        />
                       </svg>
                       <span> 12:00 </span>
                     </div>
                   </div>
                 </div>
               </router-link>
-
             </swiper-slide>
           </swiper>
 
           <div class="arrow arrow-right">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-              <path d="M10 7L15 12L10 17" stroke="#F8F8F9" stroke-width="2.5" stroke-linecap="round"
-                stroke-linejoin="round" />
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+            >
+              <path
+                d="M10 7L15 12L10 17"
+                stroke="#F8F8F9"
+                stroke-width="2.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
             </svg>
           </div>
           <div class="arrow arrow-left">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-              <path d="M14 7L9 12L14 17" stroke="#F8F8F9" stroke-width="2.5" stroke-linecap="round"
-                stroke-linejoin="round" />
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+            >
+              <path
+                d="M14 7L9 12L14 17"
+                stroke="#F8F8F9"
+                stroke-width="2.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
             </svg>
           </div>
 
-          <div class="d-none d-xl-flex d-lg-flex align-items-center justify-content-center arrowss-container gap-3">
-
+          <div
+            class="d-none d-xl-flex d-lg-flex align-items-center justify-content-center arrowss-container gap-3"
+          >
             <div class="arroww arrow-right">
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-                <path d="M19 12H5M19 12L12 5M19 12L12 19" stroke="#B7B7B7" stroke-width="2" stroke-linecap="round"
-                  stroke-linejoin="round" />
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+              >
+                <path
+                  d="M19 12H5M19 12L12 5M19 12L12 19"
+                  stroke="#B7B7B7"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
               </svg>
             </div>
             <div class="arroww arrow-left">
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-                <path d="M5 12H19M5 12L12 5M5 12L12 19" stroke="#B7B7B7" stroke-width="2" stroke-linecap="round"
-                  stroke-linejoin="round" />
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+              >
+                <path
+                  d="M5 12H19M5 12L12 5M5 12L12 19"
+                  stroke="#B7B7B7"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
               </svg>
             </div>
-
           </div>
-
         </div>
 
         <router-link to="/matches" class="d-flex align-items-center gap-2">
-                <button class="all-mobile">
+          <button class="all-mobile">
             جميع المباريات
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-              <path d="M5 12H19M5 12L12 5M5 12L12 19" stroke="#F8F8F9" stroke-width="2" stroke-linecap="round"
-                stroke-linejoin="round" />
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+            >
+              <path
+                d="M5 12H19M5 12L12 5M5 12L12 19"
+                stroke="#F8F8F9"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
             </svg>
           </button>
+        </router-link>
 
-              </router-link>
-       
         <!-- <div class="boxes">
         <div class="box">
           <h5>دوري أبطال أوروبا</h5>
@@ -180,101 +287,96 @@ let activeBtn = ref(2);
           <h4>استطلاع الرأي</h4>
         </div>
         <div class="row">
-          <div class="col-12 mb-3 col-xl-4 col-lg-4 col-md-6">
+          <div class="col-12 col-xl-4 col-lg-4 col-md-6">
             <div class="box">
               <div class="py-3">
                 <h5>ما توقعك لمباراة ليفربول و أرسنال؟</h5>
               </div>
               <div class="inputs">
                 <div class="inp">
-                  <input type="radio" id="opin-1" name="opp">
+                  <input type="radio" id="opin-1" name="opp" />
                   <label for="opin-1">
                     <div class="check"></div>
                     <span>فوز ليفربول</span>
                   </label>
-
                 </div>
                 <div class="inp">
-                  <input type="radio" id="opin-2" name="opp">
+                  <input type="radio" id="opin-2" name="opp" />
                   <label for="opin-2">
                     <div class="check"></div>
                     <span>فوز أرسنال</span>
                   </label>
-
                 </div>
                 <div class="inp">
-                  <input type="radio" id="opin-3" name="opp">
+                  <input type="radio" id="opin-3" name="opp" />
                   <label for="opin-3">
                     <div class="check"></div>
                     <span>التعادل</span>
                   </label>
-
                 </div>
               </div>
             </div>
           </div>
-          <div class="col-12 d-none d-xl-block d-lg-block mb-3 col-xl-4 col-lg-4 col-md-6">
+          <div
+            class="col-12 d-none d-xl-block d-lg-block col-xl-4 col-lg-4 col-md-6"
+          >
             <div class="box">
               <div class="py-3">
-                <h5> ما توقعك لمباراة الإتحاد و أوكلاند سيتي؟ </h5>
+                <h5>ما توقعك لمباراة الإتحاد و أوكلاند سيتي؟</h5>
               </div>
               <div class="inputs">
                 <div class="inp">
-                  <input type="radio" id="opin-4" name="opp">
+                  <input type="radio" id="opin-4" name="opp" />
                   <label for="opin-4">
                     <div class="check"></div>
                     <span>فوز ليفربول</span>
                   </label>
-
                 </div>
                 <div class="inp">
-                  <input type="radio" id="opin-5" name="opp">
+                  <input type="radio" id="opin-5" name="opp" />
                   <label for="opin-5">
                     <div class="check"></div>
                     <span>فوز أرسنال</span>
                   </label>
-
                 </div>
                 <div class="inp">
-                  <input type="radio" id="opin-6" name="opp">
+                  <input type="radio" id="opin-6" name="opp" />
                   <label for="opin-6">
                     <div class="check"></div>
                     <span>التعادل</span>
                   </label>
-
                 </div>
               </div>
             </div>
           </div>
-          <div class="col-12 d-none d-xl-block d-lg-block mb-3 col-xl-4 col-lg-4 col-md-6">
+          <div
+            class="col-12 d-none d-xl-block d-lg-block col-xl-4 col-lg-4 col-md-6"
+          >
             <div class="box">
               <div class="py-3">
                 <h5>ما توقعك لمباراة مانشستر يونايتد وبايرن ميونخ؟</h5>
               </div>
               <div class="inputs">
                 <div class="inp">
-                  <input type="radio" id="opin-7" name="opp">
+                  <input type="radio" id="opin-7" name="opp" />
                   <label for="opin-7">
                     <div class="check"></div>
                     <span>فوز ليفربول</span>
                   </label>
-
                 </div>
                 <div class="inp">
-                  <input type="radio" id="opin-8" name="opp">
+                  <input type="radio" id="opin-8" name="opp" />
                   <label for="opin-8">
                     <div class="check"></div>
                     <span>فوز أرسنال</span>
                   </label>
-
                 </div>
                 <div class="inp">
-                  <input type="radio" id="opin-9" name="opp">
+                  <input type="radio" id="opin-9" name="opp" />
                   <label for="opin-9">
                     <div class="check"></div>
                     <span>التعادل</span>
                   </label>
-
                 </div>
               </div>
             </div>
@@ -289,12 +391,22 @@ let activeBtn = ref(2);
           <router-link to="/news" class="h-100">
             <button>
               عرض المزيد
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-                <path d="M5 12H19M5 12L12 5M5 12L12 19" stroke="#F8F8F9" stroke-width="2" stroke-linecap="round"
-                  stroke-linejoin="round" />
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+              >
+                <path
+                  d="M5 12H19M5 12L12 5M5 12L12 19"
+                  stroke="#F8F8F9"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
               </svg>
             </button>
-
           </router-link>
         </div>
         <div class="main">
@@ -303,219 +415,346 @@ let activeBtn = ref(2);
               <router-link :to="{ name: 'new', params: { id: 1 } }">
                 <div class="main-box">
                   <div class="img-container">
-                    <img src="../assets/images/person.png" alt="">
+                    <img src="../assets/images/person.png" alt="" />
                     <div class="flow-text">
                       <span> الدوري السعودي </span>
-                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
-                        <path d="M3.33325 8.00004H12.6666M3.33325 8.00004L7.99992 3.33337M3.33325 8.00004L7.99992 12.6667"
-                          stroke="#F8F8F9" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="16"
+                        height="16"
+                        viewBox="0 0 16 16"
+                        fill="none"
+                      >
+                        <path
+                          d="M3.33325 8.00004H12.6666M3.33325 8.00004L7.99992 3.33337M3.33325 8.00004L7.99992 12.6667"
+                          stroke="#F8F8F9"
+                          stroke-width="2"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        />
                       </svg>
                     </div>
                   </div>
                   <div class="text">
                     <h6>لاعب اتحاد جدة: نسعى لنهائي كأس العالم للأندية</h6>
-                    <p> أعلن لاعب اتحاد جدة السعودي، فيصل الغامدي، جاهزية واستعداد فريقه الكامل لمنافسات بطولة كأس العالم
-                      للأندية.
-                      ويفتتح نادي الاتحاد وأوكلاند سيتي </p>
+                    <p>
+                      أعلن لاعب اتحاد جدة السعودي، فيصل الغامدي، جاهزية واستعداد
+                      فريقه الكامل لمنافسات بطولة كأس العالم للأندية. ويفتتح
+                      نادي الاتحاد وأوكلاند سيتي
+                    </p>
 
                     <div class="tags d-flex align-items-center gap-2">
                       <div class="d-flex align-items-center gap-2">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="17" viewBox="0 0 16 17" fill="none">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="16"
+                          height="17"
+                          viewBox="0 0 16 17"
+                          fill="none"
+                        >
                           <path
                             d="M15 4.50002C15 3.96958 14.7893 3.46087 14.4142 3.0858C14.0391 2.71073 13.5304 2.50002 13 2.50002H12.5V2.01408C12.5 1.74502 12.2931 1.51408 12.0241 1.50064C11.9565 1.49738 11.8889 1.50789 11.8255 1.53151C11.762 1.55514 11.7041 1.59139 11.6551 1.63808C11.6061 1.68478 11.5671 1.74093 11.5404 1.80314C11.5138 1.86535 11.5 1.93233 11.5 2.00002V2.50002H4.5V2.01408C4.5 1.74502 4.29313 1.51408 4.02406 1.50064C3.95646 1.49738 3.8889 1.50789 3.82547 1.53151C3.76204 1.55514 3.70407 1.59139 3.65508 1.63808C3.60608 1.68478 3.56707 1.74093 3.54041 1.80314C3.51375 1.86535 3.50001 1.93233 3.5 2.00002V2.50002H3C2.46957 2.50002 1.96086 2.71073 1.58579 3.0858C1.21071 3.46087 1 3.96958 1 4.50002V4.87502C1 4.90817 1.01317 4.93996 1.03661 4.9634C1.06005 4.98685 1.09185 5.00002 1.125 5.00002H14.875C14.9082 5.00002 14.9399 4.98685 14.9634 4.9634C14.9868 4.93996 15 4.90817 15 4.87502V4.50002ZM1 13.5C1 14.0304 1.21071 14.5392 1.58579 14.9142C1.96086 15.2893 2.46957 15.5 3 15.5H13C13.5304 15.5 14.0391 15.2893 14.4142 14.9142C14.7893 14.5392 15 14.0304 15 13.5V6.09377C15 6.0689 14.9901 6.04506 14.9725 6.02747C14.955 6.00989 14.9311 6.00002 14.9062 6.00002H1.09375C1.06889 6.00002 1.04504 6.00989 1.02746 6.02747C1.00988 6.04506 1 6.0689 1 6.09377V13.5ZM11.75 7.00002C11.8983 7.00002 12.0433 7.044 12.1667 7.12641C12.29 7.20882 12.3861 7.32596 12.4429 7.463C12.4997 7.60005 12.5145 7.75085 12.4856 7.89633C12.4566 8.04182 12.3852 8.17546 12.2803 8.28035C12.1754 8.38523 12.0418 8.45667 11.8963 8.4856C11.7508 8.51454 11.6 8.49969 11.463 8.44292C11.3259 8.38616 11.2088 8.29003 11.1264 8.16669C11.044 8.04336 11 7.89835 11 7.75002C11 7.5511 11.079 7.36034 11.2197 7.21969C11.3603 7.07903 11.5511 7.00002 11.75 7.00002ZM11.75 9.50002C11.8983 9.50002 12.0433 9.544 12.1667 9.62641C12.29 9.70882 12.3861 9.82596 12.4429 9.963C12.4997 10.1 12.5145 10.2508 12.4856 10.3963C12.4566 10.5418 12.3852 10.6755 12.2803 10.7803C12.1754 10.8852 12.0418 10.9567 11.8963 10.9856C11.7508 11.0145 11.6 10.9997 11.463 10.9429C11.3259 10.8862 11.2088 10.79 11.1264 10.6667C11.044 10.5434 11 10.3984 11 10.25C11 10.0511 11.079 9.86034 11.2197 9.71969C11.3603 9.57903 11.5511 9.50002 11.75 9.50002ZM9.25 7.00002C9.39834 7.00002 9.54334 7.044 9.66668 7.12641C9.79001 7.20882 9.88614 7.32596 9.94291 7.463C9.99967 7.60005 10.0145 7.75085 9.98559 7.89633C9.95665 8.04182 9.88522 8.17546 9.78033 8.28035C9.67544 8.38523 9.5418 8.45667 9.39632 8.4856C9.25083 8.51454 9.10003 8.49969 8.96299 8.44292C8.82594 8.38616 8.70881 8.29003 8.6264 8.16669C8.54399 8.04336 8.5 7.89835 8.5 7.75002C8.5 7.5511 8.57902 7.36034 8.71967 7.21969C8.86032 7.07903 9.05109 7.00002 9.25 7.00002ZM9.25 9.50002C9.39834 9.50002 9.54334 9.544 9.66668 9.62641C9.79001 9.70882 9.88614 9.82596 9.94291 9.963C9.99967 10.1 10.0145 10.2508 9.98559 10.3963C9.95665 10.5418 9.88522 10.6755 9.78033 10.7803C9.67544 10.8852 9.5418 10.9567 9.39632 10.9856C9.25083 11.0145 9.10003 10.9997 8.96299 10.9429C8.82594 10.8862 8.70881 10.79 8.6264 10.6667C8.54399 10.5434 8.5 10.3984 8.5 10.25C8.5 10.0511 8.57902 9.86034 8.71967 9.71969C8.86032 9.57903 9.05109 9.50002 9.25 9.50002ZM9.25 12C9.39834 12 9.54334 12.044 9.66668 12.1264C9.79001 12.2088 9.88614 12.326 9.94291 12.463C9.99967 12.6 10.0145 12.7508 9.98559 12.8963C9.95665 13.0418 9.88522 13.1755 9.78033 13.2803C9.67544 13.3852 9.5418 13.4567 9.39632 13.4856C9.25083 13.5145 9.10003 13.4997 8.96299 13.4429C8.82594 13.3862 8.70881 13.29 8.6264 13.1667C8.54399 13.0434 8.5 12.8984 8.5 12.75C8.5 12.5511 8.57902 12.3603 8.71967 12.2197C8.86032 12.079 9.05109 12 9.25 12ZM6.75 9.50002C6.89834 9.50002 7.04334 9.544 7.16668 9.62641C7.29001 9.70882 7.38614 9.82596 7.44291 9.963C7.49968 10.1 7.51453 10.2508 7.48559 10.3963C7.45665 10.5418 7.38522 10.6755 7.28033 10.7803C7.17544 10.8852 7.0418 10.9567 6.89632 10.9856C6.75083 11.0145 6.60003 10.9997 6.46299 10.9429C6.32594 10.8862 6.20881 10.79 6.1264 10.6667C6.04399 10.5434 6 10.3984 6 10.25C6 10.0511 6.07902 9.86034 6.21967 9.71969C6.36032 9.57903 6.55109 9.50002 6.75 9.50002ZM6.75 12C6.89834 12 7.04334 12.044 7.16668 12.1264C7.29001 12.2088 7.38614 12.326 7.44291 12.463C7.49968 12.6 7.51453 12.7508 7.48559 12.8963C7.45665 13.0418 7.38522 13.1755 7.28033 13.2803C7.17544 13.3852 7.0418 13.4567 6.89632 13.4856C6.75083 13.5145 6.60003 13.4997 6.46299 13.4429C6.32594 13.3862 6.20881 13.29 6.1264 13.1667C6.04399 13.0434 6 12.8984 6 12.75C6 12.5511 6.07902 12.3603 6.21967 12.2197C6.36032 12.079 6.55109 12 6.75 12ZM4.25 9.50002C4.39834 9.50002 4.54334 9.544 4.66668 9.62641C4.79001 9.70882 4.88614 9.82596 4.94291 9.963C4.99968 10.1 5.01453 10.2508 4.98559 10.3963C4.95665 10.5418 4.88522 10.6755 4.78033 10.7803C4.67544 10.8852 4.5418 10.9567 4.39632 10.9856C4.25083 11.0145 4.10003 10.9997 3.96299 10.9429C3.82594 10.8862 3.70881 10.79 3.6264 10.6667C3.54399 10.5434 3.5 10.3984 3.5 10.25C3.5 10.0511 3.57902 9.86034 3.71967 9.71969C3.86032 9.57903 4.05109 9.50002 4.25 9.50002ZM4.25 12C4.39834 12 4.54334 12.044 4.66668 12.1264C4.79001 12.2088 4.88614 12.326 4.94291 12.463C4.99968 12.6 5.01453 12.7508 4.98559 12.8963C4.95665 13.0418 4.88522 13.1755 4.78033 13.2803C4.67544 13.3852 4.5418 13.4567 4.39632 13.4856C4.25083 13.5145 4.10003 13.4997 3.96299 13.4429C3.82594 13.3862 3.70881 13.29 3.6264 13.1667C3.54399 13.0434 3.5 12.8984 3.5 12.75C3.5 12.5511 3.57902 12.3603 3.71967 12.2197C3.86032 12.079 4.05109 12 4.25 12Z"
-                            fill="#B41618" />
+                            fill="#B41618"
+                          />
                         </svg>
                         <span> 13 ديسمبر 2023 </span>
                       </div>
                       <div class="line"></div>
                       <div class="d-flex align-items-center gap-2">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="17" viewBox="0 0 16 17" fill="none">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="16"
+                          height="17"
+                          viewBox="0 0 16 17"
+                          fill="none"
+                        >
                           <path
                             d="M7.99967 1.83331C7.1242 1.83331 6.25729 2.00575 5.44845 2.34078C4.63961 2.67581 3.90469 3.16688 3.28563 3.78593C2.03539 5.03618 1.33301 6.73187 1.33301 8.49998C1.33301 10.2681 2.03539 11.9638 3.28563 13.214C3.90469 13.8331 4.63961 14.3241 5.44845 14.6592C6.25729 14.9942 7.1242 15.1666 7.99967 15.1666C9.76778 15.1666 11.4635 14.4643 12.7137 13.214C13.964 11.9638 14.6663 10.2681 14.6663 8.49998C14.6663 7.6245 14.4939 6.75759 14.1589 5.94876C13.8238 5.13992 13.3328 4.40499 12.7137 3.78593C12.0947 3.16688 11.3597 2.67581 10.5509 2.34078C9.74206 2.00575 8.87515 1.83331 7.99967 1.83331ZM10.7997 11.3L7.33301 9.16665V5.16665H8.33301V8.63331L11.333 10.4333L10.7997 11.3Z"
-                            fill="#B41618" />
+                            fill="#B41618"
+                          />
                         </svg>
                         <span> 09:37 ص </span>
                       </div>
                     </div>
                   </div>
                 </div>
-
               </router-link>
             </div>
             <div class="col-12 col-xl-3 col-lg-3 col-md-6">
               <router-link :to="{ name: 'new', params: { id: 1 } }">
                 <div class="news-card">
                   <div class="img-container">
-                    <img src="../assets/images/new1.png" alt="">
+                    <img src="../assets/images/new1.png" alt="" />
                     <div class="text-flow">
                       <span> دوري أبطال أوروبا </span>
                     </div>
                   </div>
                   <div class="text">
-                    <h5>جولة الحسم في دوري أبطال </h5>
-                    <p>أعلن لاعب اتحاد جدة السعودي، فيصل الغامدي، جاهزية واستعداد</p>
+                    <h5>جولة الحسم في دوري أبطال</h5>
+                    <p>
+                      أعلن لاعب اتحاد جدة السعودي، فيصل الغامدي، جاهزية واستعداد
+                    </p>
                     <div class="tags">
                       <div class="d-flex align-items-center gap-2">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="17" viewBox="0 0 16 17" fill="none">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="16"
+                          height="17"
+                          viewBox="0 0 16 17"
+                          fill="none"
+                        >
                           <path
                             d="M15 4.50002C15 3.96958 14.7893 3.46087 14.4142 3.0858C14.0391 2.71073 13.5304 2.50002 13 2.50002H12.5V2.01408C12.5 1.74502 12.2931 1.51408 12.0241 1.50064C11.9565 1.49738 11.8889 1.50789 11.8255 1.53151C11.762 1.55514 11.7041 1.59139 11.6551 1.63808C11.6061 1.68478 11.5671 1.74093 11.5404 1.80314C11.5138 1.86535 11.5 1.93233 11.5 2.00002V2.50002H4.5V2.01408C4.5 1.74502 4.29313 1.51408 4.02406 1.50064C3.95646 1.49738 3.8889 1.50789 3.82547 1.53151C3.76204 1.55514 3.70407 1.59139 3.65508 1.63808C3.60608 1.68478 3.56707 1.74093 3.54041 1.80314C3.51375 1.86535 3.50001 1.93233 3.5 2.00002V2.50002H3C2.46957 2.50002 1.96086 2.71073 1.58579 3.0858C1.21071 3.46087 1 3.96958 1 4.50002V4.87502C1 4.90817 1.01317 4.93996 1.03661 4.9634C1.06005 4.98685 1.09185 5.00002 1.125 5.00002H14.875C14.9082 5.00002 14.9399 4.98685 14.9634 4.9634C14.9868 4.93996 15 4.90817 15 4.87502V4.50002ZM1 13.5C1 14.0304 1.21071 14.5392 1.58579 14.9142C1.96086 15.2893 2.46957 15.5 3 15.5H13C13.5304 15.5 14.0391 15.2893 14.4142 14.9142C14.7893 14.5392 15 14.0304 15 13.5V6.09377C15 6.0689 14.9901 6.04506 14.9725 6.02747C14.955 6.00989 14.9311 6.00002 14.9062 6.00002H1.09375C1.06889 6.00002 1.04504 6.00989 1.02746 6.02747C1.00988 6.04506 1 6.0689 1 6.09377V13.5ZM11.75 7.00002C11.8983 7.00002 12.0433 7.044 12.1667 7.12641C12.29 7.20882 12.3861 7.32596 12.4429 7.463C12.4997 7.60005 12.5145 7.75085 12.4856 7.89633C12.4566 8.04182 12.3852 8.17546 12.2803 8.28035C12.1754 8.38523 12.0418 8.45667 11.8963 8.4856C11.7508 8.51454 11.6 8.49969 11.463 8.44292C11.3259 8.38616 11.2088 8.29003 11.1264 8.16669C11.044 8.04336 11 7.89835 11 7.75002C11 7.5511 11.079 7.36034 11.2197 7.21969C11.3603 7.07903 11.5511 7.00002 11.75 7.00002ZM11.75 9.50002C11.8983 9.50002 12.0433 9.544 12.1667 9.62641C12.29 9.70882 12.3861 9.82596 12.4429 9.963C12.4997 10.1 12.5145 10.2508 12.4856 10.3963C12.4566 10.5418 12.3852 10.6755 12.2803 10.7803C12.1754 10.8852 12.0418 10.9567 11.8963 10.9856C11.7508 11.0145 11.6 10.9997 11.463 10.9429C11.3259 10.8862 11.2088 10.79 11.1264 10.6667C11.044 10.5434 11 10.3984 11 10.25C11 10.0511 11.079 9.86034 11.2197 9.71969C11.3603 9.57903 11.5511 9.50002 11.75 9.50002ZM9.25 7.00002C9.39834 7.00002 9.54334 7.044 9.66668 7.12641C9.79001 7.20882 9.88614 7.32596 9.94291 7.463C9.99967 7.60005 10.0145 7.75085 9.98559 7.89633C9.95665 8.04182 9.88522 8.17546 9.78033 8.28035C9.67544 8.38523 9.5418 8.45667 9.39632 8.4856C9.25083 8.51454 9.10003 8.49969 8.96299 8.44292C8.82594 8.38616 8.70881 8.29003 8.6264 8.16669C8.54399 8.04336 8.5 7.89835 8.5 7.75002C8.5 7.5511 8.57902 7.36034 8.71967 7.21969C8.86032 7.07903 9.05109 7.00002 9.25 7.00002ZM9.25 9.50002C9.39834 9.50002 9.54334 9.544 9.66668 9.62641C9.79001 9.70882 9.88614 9.82596 9.94291 9.963C9.99967 10.1 10.0145 10.2508 9.98559 10.3963C9.95665 10.5418 9.88522 10.6755 9.78033 10.7803C9.67544 10.8852 9.5418 10.9567 9.39632 10.9856C9.25083 11.0145 9.10003 10.9997 8.96299 10.9429C8.82594 10.8862 8.70881 10.79 8.6264 10.6667C8.54399 10.5434 8.5 10.3984 8.5 10.25C8.5 10.0511 8.57902 9.86034 8.71967 9.71969C8.86032 9.57903 9.05109 9.50002 9.25 9.50002ZM9.25 12C9.39834 12 9.54334 12.044 9.66668 12.1264C9.79001 12.2088 9.88614 12.326 9.94291 12.463C9.99967 12.6 10.0145 12.7508 9.98559 12.8963C9.95665 13.0418 9.88522 13.1755 9.78033 13.2803C9.67544 13.3852 9.5418 13.4567 9.39632 13.4856C9.25083 13.5145 9.10003 13.4997 8.96299 13.4429C8.82594 13.3862 8.70881 13.29 8.6264 13.1667C8.54399 13.0434 8.5 12.8984 8.5 12.75C8.5 12.5511 8.57902 12.3603 8.71967 12.2197C8.86032 12.079 9.05109 12 9.25 12ZM6.75 9.50002C6.89834 9.50002 7.04334 9.544 7.16668 9.62641C7.29001 9.70882 7.38614 9.82596 7.44291 9.963C7.49968 10.1 7.51453 10.2508 7.48559 10.3963C7.45665 10.5418 7.38522 10.6755 7.28033 10.7803C7.17544 10.8852 7.0418 10.9567 6.89632 10.9856C6.75083 11.0145 6.60003 10.9997 6.46299 10.9429C6.32594 10.8862 6.20881 10.79 6.1264 10.6667C6.04399 10.5434 6 10.3984 6 10.25C6 10.0511 6.07902 9.86034 6.21967 9.71969C6.36032 9.57903 6.55109 9.50002 6.75 9.50002ZM6.75 12C6.89834 12 7.04334 12.044 7.16668 12.1264C7.29001 12.2088 7.38614 12.326 7.44291 12.463C7.49968 12.6 7.51453 12.7508 7.48559 12.8963C7.45665 13.0418 7.38522 13.1755 7.28033 13.2803C7.17544 13.3852 7.0418 13.4567 6.89632 13.4856C6.75083 13.5145 6.60003 13.4997 6.46299 13.4429C6.32594 13.3862 6.20881 13.29 6.1264 13.1667C6.04399 13.0434 6 12.8984 6 12.75C6 12.5511 6.07902 12.3603 6.21967 12.2197C6.36032 12.079 6.55109 12 6.75 12ZM4.25 9.50002C4.39834 9.50002 4.54334 9.544 4.66668 9.62641C4.79001 9.70882 4.88614 9.82596 4.94291 9.963C4.99968 10.1 5.01453 10.2508 4.98559 10.3963C4.95665 10.5418 4.88522 10.6755 4.78033 10.7803C4.67544 10.8852 4.5418 10.9567 4.39632 10.9856C4.25083 11.0145 4.10003 10.9997 3.96299 10.9429C3.82594 10.8862 3.70881 10.79 3.6264 10.6667C3.54399 10.5434 3.5 10.3984 3.5 10.25C3.5 10.0511 3.57902 9.86034 3.71967 9.71969C3.86032 9.57903 4.05109 9.50002 4.25 9.50002ZM4.25 12C4.39834 12 4.54334 12.044 4.66668 12.1264C4.79001 12.2088 4.88614 12.326 4.94291 12.463C4.99968 12.6 5.01453 12.7508 4.98559 12.8963C4.95665 13.0418 4.88522 13.1755 4.78033 13.2803C4.67544 13.3852 4.5418 13.4567 4.39632 13.4856C4.25083 13.5145 4.10003 13.4997 3.96299 13.4429C3.82594 13.3862 3.70881 13.29 3.6264 13.1667C3.54399 13.0434 3.5 12.8984 3.5 12.75C3.5 12.5511 3.57902 12.3603 3.71967 12.2197C3.86032 12.079 4.05109 12 4.25 12Z"
-                            fill="#B41618" />
+                            fill="#B41618"
+                          />
                         </svg>
                         <span> 13 ديسمبر 2023 </span>
                       </div>
                       <div class="line"></div>
 
                       <div class="d-flex align-items-center gap-2">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="17" viewBox="0 0 16 17" fill="none">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="16"
+                          height="17"
+                          viewBox="0 0 16 17"
+                          fill="none"
+                        >
                           <path
                             d="M8.00065 1.83331C7.12517 1.83331 6.25827 2.00575 5.44943 2.34078C4.64059 2.67581 3.90566 3.16688 3.28661 3.78593C2.03636 5.03618 1.33398 6.73187 1.33398 8.49998C1.33398 10.2681 2.03636 11.9638 3.28661 13.214C3.90566 13.8331 4.64059 14.3241 5.44943 14.6592C6.25827 14.9942 7.12517 15.1666 8.00065 15.1666C9.76876 15.1666 11.4645 14.4643 12.7147 13.214C13.9649 11.9638 14.6673 10.2681 14.6673 8.49998C14.6673 7.6245 14.4949 6.75759 14.1598 5.94876C13.8248 5.13992 13.3338 4.40499 12.7147 3.78593C12.0956 3.16688 11.3607 2.67581 10.5519 2.34078C9.74304 2.00575 8.87613 1.83331 8.00065 1.83331ZM10.8007 11.3L7.33398 9.16665V5.16665H8.33398V8.63331L11.334 10.4333L10.8007 11.3Z"
-                            fill="#B41618" />
+                            fill="#B41618"
+                          />
                         </svg>
                         <span> 09:37 ص </span>
                       </div>
                     </div>
-
                   </div>
                   <div class="flow-text-mobile">
                     <span> الدوري السعودي </span>
                   </div>
                 </div>
-
               </router-link>
             </div>
             <div class="col-12 col-xl-3 col-lg-3 col-md-6">
               <router-link :to="{ name: 'new', params: { id: 1 } }">
                 <div class="news-card">
                   <div class="img-container">
-                    <img src="../assets/images/new1.png" alt="">
+                    <img src="../assets/images/new1.png" alt="" />
                     <div class="text-flow">
                       <span> دوري أبطال أوروبا </span>
                     </div>
                   </div>
                   <div class="text">
-                    <h5>جولة الحسم في دوري أبطال </h5>
-                    <p>أعلن لاعب اتحاد جدة السعودي، فيصل الغامدي، جاهزية واستعداد</p>
+                    <h5>جولة الحسم في دوري أبطال</h5>
+                    <p>
+                      أعلن لاعب اتحاد جدة السعودي، فيصل الغامدي، جاهزية واستعداد
+                    </p>
                     <div class="tags">
                       <div class="d-flex align-items-center gap-2">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="17" viewBox="0 0 16 17" fill="none">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="16"
+                          height="17"
+                          viewBox="0 0 16 17"
+                          fill="none"
+                        >
                           <path
                             d="M15 4.50002C15 3.96958 14.7893 3.46087 14.4142 3.0858C14.0391 2.71073 13.5304 2.50002 13 2.50002H12.5V2.01408C12.5 1.74502 12.2931 1.51408 12.0241 1.50064C11.9565 1.49738 11.8889 1.50789 11.8255 1.53151C11.762 1.55514 11.7041 1.59139 11.6551 1.63808C11.6061 1.68478 11.5671 1.74093 11.5404 1.80314C11.5138 1.86535 11.5 1.93233 11.5 2.00002V2.50002H4.5V2.01408C4.5 1.74502 4.29313 1.51408 4.02406 1.50064C3.95646 1.49738 3.8889 1.50789 3.82547 1.53151C3.76204 1.55514 3.70407 1.59139 3.65508 1.63808C3.60608 1.68478 3.56707 1.74093 3.54041 1.80314C3.51375 1.86535 3.50001 1.93233 3.5 2.00002V2.50002H3C2.46957 2.50002 1.96086 2.71073 1.58579 3.0858C1.21071 3.46087 1 3.96958 1 4.50002V4.87502C1 4.90817 1.01317 4.93996 1.03661 4.9634C1.06005 4.98685 1.09185 5.00002 1.125 5.00002H14.875C14.9082 5.00002 14.9399 4.98685 14.9634 4.9634C14.9868 4.93996 15 4.90817 15 4.87502V4.50002ZM1 13.5C1 14.0304 1.21071 14.5392 1.58579 14.9142C1.96086 15.2893 2.46957 15.5 3 15.5H13C13.5304 15.5 14.0391 15.2893 14.4142 14.9142C14.7893 14.5392 15 14.0304 15 13.5V6.09377C15 6.0689 14.9901 6.04506 14.9725 6.02747C14.955 6.00989 14.9311 6.00002 14.9062 6.00002H1.09375C1.06889 6.00002 1.04504 6.00989 1.02746 6.02747C1.00988 6.04506 1 6.0689 1 6.09377V13.5ZM11.75 7.00002C11.8983 7.00002 12.0433 7.044 12.1667 7.12641C12.29 7.20882 12.3861 7.32596 12.4429 7.463C12.4997 7.60005 12.5145 7.75085 12.4856 7.89633C12.4566 8.04182 12.3852 8.17546 12.2803 8.28035C12.1754 8.38523 12.0418 8.45667 11.8963 8.4856C11.7508 8.51454 11.6 8.49969 11.463 8.44292C11.3259 8.38616 11.2088 8.29003 11.1264 8.16669C11.044 8.04336 11 7.89835 11 7.75002C11 7.5511 11.079 7.36034 11.2197 7.21969C11.3603 7.07903 11.5511 7.00002 11.75 7.00002ZM11.75 9.50002C11.8983 9.50002 12.0433 9.544 12.1667 9.62641C12.29 9.70882 12.3861 9.82596 12.4429 9.963C12.4997 10.1 12.5145 10.2508 12.4856 10.3963C12.4566 10.5418 12.3852 10.6755 12.2803 10.7803C12.1754 10.8852 12.0418 10.9567 11.8963 10.9856C11.7508 11.0145 11.6 10.9997 11.463 10.9429C11.3259 10.8862 11.2088 10.79 11.1264 10.6667C11.044 10.5434 11 10.3984 11 10.25C11 10.0511 11.079 9.86034 11.2197 9.71969C11.3603 9.57903 11.5511 9.50002 11.75 9.50002ZM9.25 7.00002C9.39834 7.00002 9.54334 7.044 9.66668 7.12641C9.79001 7.20882 9.88614 7.32596 9.94291 7.463C9.99967 7.60005 10.0145 7.75085 9.98559 7.89633C9.95665 8.04182 9.88522 8.17546 9.78033 8.28035C9.67544 8.38523 9.5418 8.45667 9.39632 8.4856C9.25083 8.51454 9.10003 8.49969 8.96299 8.44292C8.82594 8.38616 8.70881 8.29003 8.6264 8.16669C8.54399 8.04336 8.5 7.89835 8.5 7.75002C8.5 7.5511 8.57902 7.36034 8.71967 7.21969C8.86032 7.07903 9.05109 7.00002 9.25 7.00002ZM9.25 9.50002C9.39834 9.50002 9.54334 9.544 9.66668 9.62641C9.79001 9.70882 9.88614 9.82596 9.94291 9.963C9.99967 10.1 10.0145 10.2508 9.98559 10.3963C9.95665 10.5418 9.88522 10.6755 9.78033 10.7803C9.67544 10.8852 9.5418 10.9567 9.39632 10.9856C9.25083 11.0145 9.10003 10.9997 8.96299 10.9429C8.82594 10.8862 8.70881 10.79 8.6264 10.6667C8.54399 10.5434 8.5 10.3984 8.5 10.25C8.5 10.0511 8.57902 9.86034 8.71967 9.71969C8.86032 9.57903 9.05109 9.50002 9.25 9.50002ZM9.25 12C9.39834 12 9.54334 12.044 9.66668 12.1264C9.79001 12.2088 9.88614 12.326 9.94291 12.463C9.99967 12.6 10.0145 12.7508 9.98559 12.8963C9.95665 13.0418 9.88522 13.1755 9.78033 13.2803C9.67544 13.3852 9.5418 13.4567 9.39632 13.4856C9.25083 13.5145 9.10003 13.4997 8.96299 13.4429C8.82594 13.3862 8.70881 13.29 8.6264 13.1667C8.54399 13.0434 8.5 12.8984 8.5 12.75C8.5 12.5511 8.57902 12.3603 8.71967 12.2197C8.86032 12.079 9.05109 12 9.25 12ZM6.75 9.50002C6.89834 9.50002 7.04334 9.544 7.16668 9.62641C7.29001 9.70882 7.38614 9.82596 7.44291 9.963C7.49968 10.1 7.51453 10.2508 7.48559 10.3963C7.45665 10.5418 7.38522 10.6755 7.28033 10.7803C7.17544 10.8852 7.0418 10.9567 6.89632 10.9856C6.75083 11.0145 6.60003 10.9997 6.46299 10.9429C6.32594 10.8862 6.20881 10.79 6.1264 10.6667C6.04399 10.5434 6 10.3984 6 10.25C6 10.0511 6.07902 9.86034 6.21967 9.71969C6.36032 9.57903 6.55109 9.50002 6.75 9.50002ZM6.75 12C6.89834 12 7.04334 12.044 7.16668 12.1264C7.29001 12.2088 7.38614 12.326 7.44291 12.463C7.49968 12.6 7.51453 12.7508 7.48559 12.8963C7.45665 13.0418 7.38522 13.1755 7.28033 13.2803C7.17544 13.3852 7.0418 13.4567 6.89632 13.4856C6.75083 13.5145 6.60003 13.4997 6.46299 13.4429C6.32594 13.3862 6.20881 13.29 6.1264 13.1667C6.04399 13.0434 6 12.8984 6 12.75C6 12.5511 6.07902 12.3603 6.21967 12.2197C6.36032 12.079 6.55109 12 6.75 12ZM4.25 9.50002C4.39834 9.50002 4.54334 9.544 4.66668 9.62641C4.79001 9.70882 4.88614 9.82596 4.94291 9.963C4.99968 10.1 5.01453 10.2508 4.98559 10.3963C4.95665 10.5418 4.88522 10.6755 4.78033 10.7803C4.67544 10.8852 4.5418 10.9567 4.39632 10.9856C4.25083 11.0145 4.10003 10.9997 3.96299 10.9429C3.82594 10.8862 3.70881 10.79 3.6264 10.6667C3.54399 10.5434 3.5 10.3984 3.5 10.25C3.5 10.0511 3.57902 9.86034 3.71967 9.71969C3.86032 9.57903 4.05109 9.50002 4.25 9.50002ZM4.25 12C4.39834 12 4.54334 12.044 4.66668 12.1264C4.79001 12.2088 4.88614 12.326 4.94291 12.463C4.99968 12.6 5.01453 12.7508 4.98559 12.8963C4.95665 13.0418 4.88522 13.1755 4.78033 13.2803C4.67544 13.3852 4.5418 13.4567 4.39632 13.4856C4.25083 13.5145 4.10003 13.4997 3.96299 13.4429C3.82594 13.3862 3.70881 13.29 3.6264 13.1667C3.54399 13.0434 3.5 12.8984 3.5 12.75C3.5 12.5511 3.57902 12.3603 3.71967 12.2197C3.86032 12.079 4.05109 12 4.25 12Z"
-                            fill="#B41618" />
+                            fill="#B41618"
+                          />
                         </svg>
                         <span> 13 ديسمبر 2023 </span>
                       </div>
                       <div class="line"></div>
 
                       <div class="d-flex align-items-center gap-2">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="17" viewBox="0 0 16 17" fill="none">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="16"
+                          height="17"
+                          viewBox="0 0 16 17"
+                          fill="none"
+                        >
                           <path
                             d="M8.00065 1.83331C7.12517 1.83331 6.25827 2.00575 5.44943 2.34078C4.64059 2.67581 3.90566 3.16688 3.28661 3.78593C2.03636 5.03618 1.33398 6.73187 1.33398 8.49998C1.33398 10.2681 2.03636 11.9638 3.28661 13.214C3.90566 13.8331 4.64059 14.3241 5.44943 14.6592C6.25827 14.9942 7.12517 15.1666 8.00065 15.1666C9.76876 15.1666 11.4645 14.4643 12.7147 13.214C13.9649 11.9638 14.6673 10.2681 14.6673 8.49998C14.6673 7.6245 14.4949 6.75759 14.1598 5.94876C13.8248 5.13992 13.3338 4.40499 12.7147 3.78593C12.0956 3.16688 11.3607 2.67581 10.5519 2.34078C9.74304 2.00575 8.87613 1.83331 8.00065 1.83331ZM10.8007 11.3L7.33398 9.16665V5.16665H8.33398V8.63331L11.334 10.4333L10.8007 11.3Z"
-                            fill="#B41618" />
+                            fill="#B41618"
+                          />
                         </svg>
                         <span> 09:37 ص </span>
                       </div>
                     </div>
-
                   </div>
                   <div class="flow-text-mobile">
                     <span> الدوري السعودي </span>
                   </div>
                 </div>
-
               </router-link>
             </div>
           </div>
           <router-link to="/news" class="h w-100">
             <button class="all-mobile">
               عرض المزيد
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-                <path d="M5 12H19M5 12L12 5M5 12L12 19" stroke="#F8F8F9" stroke-width="2" stroke-linecap="round"
-                  stroke-linejoin="round" />
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+              >
+                <path
+                  d="M5 12H19M5 12L12 5M5 12L12 19"
+                  stroke="#F8F8F9"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
               </svg>
             </button>
-
           </router-link>
-
         </div>
       </div>
       <div class="news-container-home">
         <div class="head-line">
-          <h4> أحدث الأخبار </h4>
+          <h4>أحدث الأخبار</h4>
           <router-link to="/news" class="h-100">
             <button>
               عرض المزيد
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-                <path d="M5 12H19M5 12L12 5M5 12L12 19" stroke="#F8F8F9" stroke-width="2" stroke-linecap="round"
-                  stroke-linejoin="round" />
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+              >
+                <path
+                  d="M5 12H19M5 12L12 5M5 12L12 19"
+                  stroke="#F8F8F9"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
               </svg>
             </button>
-
           </router-link>
         </div>
-        <div class="main">
+        <div class="">
           <div class="row">
-            <div v-for="i, index in 8" class="col-12 col-xl-3 col-lg-3 col-md-6 mb-4">
+            <div
+              v-for="(i, index) in 8"
+              class="col-12 col-xl-3 col-lg-3 col-md-6"
+            >
               <router-link :to="{ name: 'new', params: { id: index + 1 } }">
                 <div class="news-card main">
                   <div class="img-container">
-                    <img src="../assets/images/new1.png" alt="">
+                    <img src="../assets/images/new1.png" alt="" />
                     <div class="text-flow">
                       <span> دوري أبطال أوروبا </span>
-                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
-                        <path d="M3.33301 7.99998H12.6663M3.33301 7.99998L7.99967 3.33331M3.33301 7.99998L7.99967 12.6666"
-                          stroke="#F8F8F9" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="16"
+                        height="16"
+                        viewBox="0 0 16 16"
+                        fill="none"
+                      >
+                        <path
+                          d="M3.33301 7.99998H12.6663M3.33301 7.99998L7.99967 3.33331M3.33301 7.99998L7.99967 12.6666"
+                          stroke="#F8F8F9"
+                          stroke-width="2"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        />
                       </svg>
                     </div>
                   </div>
                   <div class="text">
-                    <h5>جولة الحسم في دوري أبطال </h5>
-                    <p>أعلن لاعب اتحاد جدة السعودي، فيصل الغامدي، جاهزية واستعداد</p>
-                    <div class="tags">
-                      <div class="d-flex align-items-center gap-2">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="17" viewBox="0 0 16 17" fill="none">
-                          <path
-                            d="M15 4.49998C15 3.96955 14.7893 3.46084 14.4142 3.08577C14.0391 2.7107 13.5304 2.49998 13 2.49998H12.5V2.01405C12.5 1.74498 12.2931 1.51405 12.0241 1.50061C11.9565 1.49735 11.8889 1.50785 11.8255 1.53148C11.762 1.55511 11.7041 1.59136 11.6551 1.63805C11.6061 1.68475 11.5671 1.7409 11.5404 1.80311C11.5138 1.86532 11.5 1.9323 11.5 1.99998V2.49998H4.5V2.01405C4.5 1.74498 4.29313 1.51405 4.02406 1.50061C3.95646 1.49735 3.8889 1.50785 3.82547 1.53148C3.76204 1.55511 3.70407 1.59136 3.65508 1.63805C3.60608 1.68475 3.56707 1.7409 3.54041 1.80311C3.51375 1.86532 3.50001 1.9323 3.5 1.99998V2.49998H3C2.46957 2.49998 1.96086 2.7107 1.58579 3.08577C1.21071 3.46084 1 3.96955 1 4.49998V4.87498C1 4.90814 1.01317 4.93993 1.03661 4.96337C1.06005 4.98682 1.09185 4.99998 1.125 4.99998H14.875C14.9082 4.99998 14.9399 4.98682 14.9634 4.96337C14.9868 4.93993 15 4.90814 15 4.87498V4.49998ZM1 13.5C1 14.0304 1.21071 14.5391 1.58579 14.9142C1.96086 15.2893 2.46957 15.5 3 15.5H13C13.5304 15.5 14.0391 15.2893 14.4142 14.9142C14.7893 14.5391 15 14.0304 15 13.5V6.09373C15 6.06887 14.9901 6.04502 14.9725 6.02744C14.955 6.00986 14.9311 5.99998 14.9062 5.99998H1.09375C1.06889 5.99998 1.04504 6.00986 1.02746 6.02744C1.00988 6.04502 1 6.06887 1 6.09373V13.5ZM11.75 6.99998C11.8983 6.99998 12.0433 7.04397 12.1667 7.12638C12.29 7.20879 12.3861 7.32593 12.4429 7.46297C12.4997 7.60002 12.5145 7.75082 12.4856 7.8963C12.4566 8.04179 12.3852 8.17543 12.2803 8.28031C12.1754 8.3852 12.0418 8.45663 11.8963 8.48557C11.7508 8.51451 11.6 8.49966 11.463 8.44289C11.3259 8.38613 11.2088 8.29 11.1264 8.16666C11.044 8.04333 11 7.89832 11 7.74998C11 7.55107 11.079 7.36031 11.2197 7.21965C11.3603 7.079 11.5511 6.99998 11.75 6.99998ZM11.75 9.49998C11.8983 9.49998 12.0433 9.54397 12.1667 9.62638C12.29 9.70879 12.3861 9.82593 12.4429 9.96297C12.4997 10.1 12.5145 10.2508 12.4856 10.3963C12.4566 10.5418 12.3852 10.6754 12.2803 10.7803C12.1754 10.8852 12.0418 10.9566 11.8963 10.9856C11.7508 11.0145 11.6 10.9997 11.463 10.9429C11.3259 10.8861 11.2088 10.79 11.1264 10.6667C11.044 10.5433 11 10.3983 11 10.25C11 10.0511 11.079 9.86031 11.2197 9.71966C11.3603 9.579 11.5511 9.49998 11.75 9.49998ZM9.25 6.99998C9.39834 6.99998 9.54334 7.04397 9.66668 7.12638C9.79001 7.20879 9.88614 7.32593 9.94291 7.46297C9.99967 7.60002 10.0145 7.75082 9.98559 7.8963C9.95665 8.04179 9.88522 8.17543 9.78033 8.28031C9.67544 8.3852 9.5418 8.45663 9.39632 8.48557C9.25083 8.51451 9.10003 8.49966 8.96299 8.44289C8.82594 8.38613 8.70881 8.29 8.6264 8.16666C8.54399 8.04333 8.5 7.89832 8.5 7.74998C8.5 7.55107 8.57902 7.36031 8.71967 7.21965C8.86032 7.079 9.05109 6.99998 9.25 6.99998ZM9.25 9.49998C9.39834 9.49998 9.54334 9.54397 9.66668 9.62638C9.79001 9.70879 9.88614 9.82593 9.94291 9.96297C9.99967 10.1 10.0145 10.2508 9.98559 10.3963C9.95665 10.5418 9.88522 10.6754 9.78033 10.7803C9.67544 10.8852 9.5418 10.9566 9.39632 10.9856C9.25083 11.0145 9.10003 10.9997 8.96299 10.9429C8.82594 10.8861 8.70881 10.79 8.6264 10.6667C8.54399 10.5433 8.5 10.3983 8.5 10.25C8.5 10.0511 8.57902 9.86031 8.71967 9.71966C8.86032 9.579 9.05109 9.49998 9.25 9.49998ZM9.25 12C9.39834 12 9.54334 12.044 9.66668 12.1264C9.79001 12.2088 9.88614 12.3259 9.94291 12.463C9.99967 12.6 10.0145 12.7508 9.98559 12.8963C9.95665 13.0418 9.88522 13.1754 9.78033 13.2803C9.67544 13.3852 9.5418 13.4566 9.39632 13.4856C9.25083 13.5145 9.10003 13.4997 8.96299 13.4429C8.82594 13.3861 8.70881 13.29 8.6264 13.1667C8.54399 13.0433 8.5 12.8983 8.5 12.75C8.5 12.5511 8.57902 12.3603 8.71967 12.2197C8.86032 12.079 9.05109 12 9.25 12ZM6.75 9.49998C6.89834 9.49998 7.04334 9.54397 7.16668 9.62638C7.29001 9.70879 7.38614 9.82593 7.44291 9.96297C7.49968 10.1 7.51453 10.2508 7.48559 10.3963C7.45665 10.5418 7.38522 10.6754 7.28033 10.7803C7.17544 10.8852 7.0418 10.9566 6.89632 10.9856C6.75083 11.0145 6.60003 10.9997 6.46299 10.9429C6.32594 10.8861 6.20881 10.79 6.1264 10.6667C6.04399 10.5433 6 10.3983 6 10.25C6 10.0511 6.07902 9.86031 6.21967 9.71966C6.36032 9.579 6.55109 9.49998 6.75 9.49998ZM6.75 12C6.89834 12 7.04334 12.044 7.16668 12.1264C7.29001 12.2088 7.38614 12.3259 7.44291 12.463C7.49968 12.6 7.51453 12.7508 7.48559 12.8963C7.45665 13.0418 7.38522 13.1754 7.28033 13.2803C7.17544 13.3852 7.0418 13.4566 6.89632 13.4856C6.75083 13.5145 6.60003 13.4997 6.46299 13.4429C6.32594 13.3861 6.20881 13.29 6.1264 13.1667C6.04399 13.0433 6 12.8983 6 12.75C6 12.5511 6.07902 12.3603 6.21967 12.2197C6.36032 12.079 6.55109 12 6.75 12ZM4.25 9.49998C4.39834 9.49998 4.54334 9.54397 4.66668 9.62638C4.79001 9.70879 4.88614 9.82593 4.94291 9.96297C4.99968 10.1 5.01453 10.2508 4.98559 10.3963C4.95665 10.5418 4.88522 10.6754 4.78033 10.7803C4.67544 10.8852 4.5418 10.9566 4.39632 10.9856C4.25083 11.0145 4.10003 10.9997 3.96299 10.9429C3.82594 10.8861 3.70881 10.79 3.6264 10.6667C3.54399 10.5433 3.5 10.3983 3.5 10.25C3.5 10.0511 3.57902 9.86031 3.71967 9.71966C3.86032 9.579 4.05109 9.49998 4.25 9.49998ZM4.25 12C4.39834 12 4.54334 12.044 4.66668 12.1264C4.79001 12.2088 4.88614 12.3259 4.94291 12.463C4.99968 12.6 5.01453 12.7508 4.98559 12.8963C4.95665 13.0418 4.88522 13.1754 4.78033 13.2803C4.67544 13.3852 4.5418 13.4566 4.39632 13.4856C4.25083 13.5145 4.10003 13.4997 3.96299 13.4429C3.82594 13.3861 3.70881 13.29 3.6264 13.1667C3.54399 13.0433 3.5 12.8983 3.5 12.75C3.5 12.5511 3.57902 12.3603 3.71967 12.2197C3.86032 12.079 4.05109 12 4.25 12Z"
-                            fill="#B7B7B7" />
-                        </svg>
-                        <span> 13 ديسمبر 2023 </span>
-                      </div>
-                      <div class="line"></div>
-
-                      <div class="d-flex align-items-center gap-2">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="17" viewBox="0 0 16 17" fill="none">
-                          <path
-                            d="M7.99967 1.83334C7.1242 1.83334 6.25729 2.00578 5.44845 2.34081C4.63961 2.67584 3.90469 3.16691 3.28563 3.78596C2.03539 5.03621 1.33301 6.7319 1.33301 8.50001C1.33301 10.2681 2.03539 11.9638 3.28563 13.2141C3.90469 13.8331 4.63961 14.3242 5.44845 14.6592C6.25729 14.9942 7.1242 15.1667 7.99967 15.1667C9.76778 15.1667 11.4635 14.4643 12.7137 13.2141C13.964 11.9638 14.6663 10.2681 14.6663 8.50001C14.6663 7.62453 14.4939 6.75762 14.1589 5.94879C13.8238 5.13995 13.3328 4.40502 12.7137 3.78596C12.0947 3.16691 11.3597 2.67584 10.5509 2.34081C9.74206 2.00578 8.87515 1.83334 7.99967 1.83334ZM10.7997 11.3L7.33301 9.16668V5.16668H8.33301V8.63334L11.333 10.4333L10.7997 11.3Z"
-                            fill="#B7B7B7" />
-                        </svg>
-                        <span> 09:37 ص </span>
-                      </div>
+                    <div class="sub-text">
+                      <h5>جولة الحسم في دوري أبطال</h5>
+                      <p>
+                        إمام عاشور يكشف.. دور كهربا.. سر اختيار رقم 22.. وتفاصيل
+                        مفاوضات الأهلي
+                      </p>
+                    </div>
+                  </div>
+                  <div class="tags d-md-flex justify-content-between p-2">
+                    <div class="d-flex align-items-center gap-2">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="16"
+                        height="17"
+                        viewBox="0 0 16 17"
+                        fill="none"
+                      >
+                        <path
+                          d="M15 4.49998C15 3.96955 14.7893 3.46084 14.4142 3.08577C14.0391 2.7107 13.5304 2.49998 13 2.49998H12.5V2.01405C12.5 1.74498 12.2931 1.51405 12.0241 1.50061C11.9565 1.49735 11.8889 1.50785 11.8255 1.53148C11.762 1.55511 11.7041 1.59136 11.6551 1.63805C11.6061 1.68475 11.5671 1.7409 11.5404 1.80311C11.5138 1.86532 11.5 1.9323 11.5 1.99998V2.49998H4.5V2.01405C4.5 1.74498 4.29313 1.51405 4.02406 1.50061C3.95646 1.49735 3.8889 1.50785 3.82547 1.53148C3.76204 1.55511 3.70407 1.59136 3.65508 1.63805C3.60608 1.68475 3.56707 1.7409 3.54041 1.80311C3.51375 1.86532 3.50001 1.9323 3.5 1.99998V2.49998H3C2.46957 2.49998 1.96086 2.7107 1.58579 3.08577C1.21071 3.46084 1 3.96955 1 4.49998V4.87498C1 4.90814 1.01317 4.93993 1.03661 4.96337C1.06005 4.98682 1.09185 4.99998 1.125 4.99998H14.875C14.9082 4.99998 14.9399 4.98682 14.9634 4.96337C14.9868 4.93993 15 4.90814 15 4.87498V4.49998ZM1 13.5C1 14.0304 1.21071 14.5391 1.58579 14.9142C1.96086 15.2893 2.46957 15.5 3 15.5H13C13.5304 15.5 14.0391 15.2893 14.4142 14.9142C14.7893 14.5391 15 14.0304 15 13.5V6.09373C15 6.06887 14.9901 6.04502 14.9725 6.02744C14.955 6.00986 14.9311 5.99998 14.9062 5.99998H1.09375C1.06889 5.99998 1.04504 6.00986 1.02746 6.02744C1.00988 6.04502 1 6.06887 1 6.09373V13.5ZM11.75 6.99998C11.8983 6.99998 12.0433 7.04397 12.1667 7.12638C12.29 7.20879 12.3861 7.32593 12.4429 7.46297C12.4997 7.60002 12.5145 7.75082 12.4856 7.8963C12.4566 8.04179 12.3852 8.17543 12.2803 8.28031C12.1754 8.3852 12.0418 8.45663 11.8963 8.48557C11.7508 8.51451 11.6 8.49966 11.463 8.44289C11.3259 8.38613 11.2088 8.29 11.1264 8.16666C11.044 8.04333 11 7.89832 11 7.74998C11 7.55107 11.079 7.36031 11.2197 7.21965C11.3603 7.079 11.5511 6.99998 11.75 6.99998ZM11.75 9.49998C11.8983 9.49998 12.0433 9.54397 12.1667 9.62638C12.29 9.70879 12.3861 9.82593 12.4429 9.96297C12.4997 10.1 12.5145 10.2508 12.4856 10.3963C12.4566 10.5418 12.3852 10.6754 12.2803 10.7803C12.1754 10.8852 12.0418 10.9566 11.8963 10.9856C11.7508 11.0145 11.6 10.9997 11.463 10.9429C11.3259 10.8861 11.2088 10.79 11.1264 10.6667C11.044 10.5433 11 10.3983 11 10.25C11 10.0511 11.079 9.86031 11.2197 9.71966C11.3603 9.579 11.5511 9.49998 11.75 9.49998ZM9.25 6.99998C9.39834 6.99998 9.54334 7.04397 9.66668 7.12638C9.79001 7.20879 9.88614 7.32593 9.94291 7.46297C9.99967 7.60002 10.0145 7.75082 9.98559 7.8963C9.95665 8.04179 9.88522 8.17543 9.78033 8.28031C9.67544 8.3852 9.5418 8.45663 9.39632 8.48557C9.25083 8.51451 9.10003 8.49966 8.96299 8.44289C8.82594 8.38613 8.70881 8.29 8.6264 8.16666C8.54399 8.04333 8.5 7.89832 8.5 7.74998C8.5 7.55107 8.57902 7.36031 8.71967 7.21965C8.86032 7.079 9.05109 6.99998 9.25 6.99998ZM9.25 9.49998C9.39834 9.49998 9.54334 9.54397 9.66668 9.62638C9.79001 9.70879 9.88614 9.82593 9.94291 9.96297C9.99967 10.1 10.0145 10.2508 9.98559 10.3963C9.95665 10.5418 9.88522 10.6754 9.78033 10.7803C9.67544 10.8852 9.5418 10.9566 9.39632 10.9856C9.25083 11.0145 9.10003 10.9997 8.96299 10.9429C8.82594 10.8861 8.70881 10.79 8.6264 10.6667C8.54399 10.5433 8.5 10.3983 8.5 10.25C8.5 10.0511 8.57902 9.86031 8.71967 9.71966C8.86032 9.579 9.05109 9.49998 9.25 9.49998ZM9.25 12C9.39834 12 9.54334 12.044 9.66668 12.1264C9.79001 12.2088 9.88614 12.3259 9.94291 12.463C9.99967 12.6 10.0145 12.7508 9.98559 12.8963C9.95665 13.0418 9.88522 13.1754 9.78033 13.2803C9.67544 13.3852 9.5418 13.4566 9.39632 13.4856C9.25083 13.5145 9.10003 13.4997 8.96299 13.4429C8.82594 13.3861 8.70881 13.29 8.6264 13.1667C8.54399 13.0433 8.5 12.8983 8.5 12.75C8.5 12.5511 8.57902 12.3603 8.71967 12.2197C8.86032 12.079 9.05109 12 9.25 12ZM6.75 9.49998C6.89834 9.49998 7.04334 9.54397 7.16668 9.62638C7.29001 9.70879 7.38614 9.82593 7.44291 9.96297C7.49968 10.1 7.51453 10.2508 7.48559 10.3963C7.45665 10.5418 7.38522 10.6754 7.28033 10.7803C7.17544 10.8852 7.0418 10.9566 6.89632 10.9856C6.75083 11.0145 6.60003 10.9997 6.46299 10.9429C6.32594 10.8861 6.20881 10.79 6.1264 10.6667C6.04399 10.5433 6 10.3983 6 10.25C6 10.0511 6.07902 9.86031 6.21967 9.71966C6.36032 9.579 6.55109 9.49998 6.75 9.49998ZM6.75 12C6.89834 12 7.04334 12.044 7.16668 12.1264C7.29001 12.2088 7.38614 12.3259 7.44291 12.463C7.49968 12.6 7.51453 12.7508 7.48559 12.8963C7.45665 13.0418 7.38522 13.1754 7.28033 13.2803C7.17544 13.3852 7.0418 13.4566 6.89632 13.4856C6.75083 13.5145 6.60003 13.4997 6.46299 13.4429C6.32594 13.3861 6.20881 13.29 6.1264 13.1667C6.04399 13.0433 6 12.8983 6 12.75C6 12.5511 6.07902 12.3603 6.21967 12.2197C6.36032 12.079 6.55109 12 6.75 12ZM4.25 9.49998C4.39834 9.49998 4.54334 9.54397 4.66668 9.62638C4.79001 9.70879 4.88614 9.82593 4.94291 9.96297C4.99968 10.1 5.01453 10.2508 4.98559 10.3963C4.95665 10.5418 4.88522 10.6754 4.78033 10.7803C4.67544 10.8852 4.5418 10.9566 4.39632 10.9856C4.25083 11.0145 4.10003 10.9997 3.96299 10.9429C3.82594 10.8861 3.70881 10.79 3.6264 10.6667C3.54399 10.5433 3.5 10.3983 3.5 10.25C3.5 10.0511 3.57902 9.86031 3.71967 9.71966C3.86032 9.579 4.05109 9.49998 4.25 9.49998ZM4.25 12C4.39834 12 4.54334 12.044 4.66668 12.1264C4.79001 12.2088 4.88614 12.3259 4.94291 12.463C4.99968 12.6 5.01453 12.7508 4.98559 12.8963C4.95665 13.0418 4.88522 13.1754 4.78033 13.2803C4.67544 13.3852 4.5418 13.4566 4.39632 13.4856C4.25083 13.5145 4.10003 13.4997 3.96299 13.4429C3.82594 13.3861 3.70881 13.29 3.6264 13.1667C3.54399 13.0433 3.5 12.8983 3.5 12.75C3.5 12.5511 3.57902 12.3603 3.71967 12.2197C3.86032 12.079 4.05109 12 4.25 12Z"
+                          fill="#B7B7B7"
+                        />
+                      </svg>
+                      <span> 13 ديسمبر 2023 </span>
                     </div>
 
+                    <div class="">
+                      <button class="">
+                        <RouterLink
+                          :to="{ name: 'new', params: { id: index + 1 } }"
+                          class="btn btn-danger d-flex align-items-center gap-2 pt-2"
+                          style="height: 20px"
+                        >
+                          <div>
+                            <p style="font-size: 15px; color: white">المزيد</p>
+                          </div>
+                          <div class="mb-2">
+                            <svg
+                              xmlns="http://www.w3.org/2000/svg"
+                              width="15"
+                              height="15"
+                              viewBox="0 0 24 24"
+                              fill="none"
+                            >
+                              <path
+                                d="M5 12H19M5 12L12 5M5 12L12 19"
+                                stroke="#F8F8F9"
+                                stroke-width="2"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                              />
+                            </svg>
+                          </div>
+                        </RouterLink>
+                      </button>
+                    </div>
                   </div>
-                  <div class="flow-text-mobile">
-                    <span> الدوري السعودي </span>
-
-                  </div>
+                 
+                    <div class="flow-text-mobile !bg-[#b41618]"><span class="text-white"> عرض المزيد </span></div>
+     
                 </div>
-
               </router-link>
             </div>
           </div>
           <router-link to="/news" class="h w-100">
             <button class="all-mobile">
               عرض المزيد
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-                <path d="M5 12H19M5 12L12 5M5 12L12 19" stroke="#F8F8F9" stroke-width="2" stroke-linecap="round"
-                  stroke-linejoin="round" />
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+              >
+                <path
+                  d="M5 12H19M5 12L12 5M5 12L12 19"
+                  stroke="#F8F8F9"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
               </svg>
             </button>
-
           </router-link>
         </div>
       </div>
       <div class="addds-row"></div>
 
-      <div class="videos-container-home">
+      <!-- <div class="videos-container-home">
         <div class="head-line">
           <h4> أحدث الفيديوهات </h4>
           <router-link to="/newsVideos" class="h-100">
@@ -583,51 +822,33 @@ let activeBtn = ref(2);
 
           </router-link>
         </div>
-      </div>
+      </div> -->
       <div class="summary-container-home mt-3">
         <div class="head-line">
-          <h4> ملخص المباريات </h4>
+          <h4>ملخص المباريات</h4>
           <router-link to="/newsMatches" class="h-100">
             <button>
               عرض المزيد
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-                <path d="M5 12H19M5 12L12 5M5 12L12 19" stroke="#F8F8F9" stroke-width="2" stroke-linecap="round"
-                  stroke-linejoin="round" />
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+              >
+                <path
+                  d="M5 12H19M5 12L12 5M5 12L12 19"
+                  stroke="#F8F8F9"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
               </svg>
             </button>
-
           </router-link>
         </div>
-        <div class="main mt-5">
+        <div class="main mt-4">
           <div class="row">
-            <div class="col-12 col-xl-6 col-lg-6">
-              <router-link to="/videoMatch">
-                <div class="video-card sum-main">
-                  <div class="video-container">
-                    <img src="../assets/images/news3.png" />
-                    <div class="overlay"></div>
-                    <div class="icon">
-                      <svg xmlns="http://www.w3.org/2000/svg" width="124" height="124" viewBox="0 0 124 124" fill="none">
-                        <path
-                          d="M48.9441 92.7071L48.9397 92.71C48.1409 93.2291 47.3608 93.4889 46.5938 93.5169C45.8273 93.5449 45.0396 93.3427 44.2231 92.8844L44.2228 92.8842C43.4078 92.4273 42.8171 91.8583 42.4274 91.1833C42.0374 90.5076 41.833 89.6983 41.833 88.7375V35.2625C41.833 33.3719 42.6213 32.0117 44.223 31.1106C45.0391 30.6541 45.8268 30.4531 46.5933 30.4818C47.3605 30.5106 48.1408 30.7708 48.9397 31.2901L48.9397 31.2901L48.9442 31.2929L91.0476 58.0273C92.4527 58.9658 93.1455 60.2712 93.1455 62C93.1455 63.7288 92.4527 65.0341 91.0477 65.9726L48.9441 92.7071Z"
-                          fill="#B7B7B7" stroke="#F8F8F9" />
-                      </svg>
-                    </div>
-                    <div class="time">
-                      <span>10:00</span>
-                      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-                        <path d="M0 4C0 1.79086 1.79086 0 4 0H24V24H4C1.79086 24 0 22.2091 0 20V4Z" fill="#212121" />
-                        <path
-                          d="M9.525 18.025C9.19167 18.2417 8.854 18.254 8.512 18.062C8.17067 17.8707 8 17.575 8 17.175V6.82499C8 6.42499 8.17067 6.12899 8.512 5.93699C8.854 5.74566 9.19167 5.75832 9.525 5.97499L17.675 11.15C17.975 11.35 18.125 11.6333 18.125 12C18.125 12.3667 17.975 12.65 17.675 12.85L9.525 18.025Z"
-                          fill="#B41618" />
-                      </svg>
-                    </div>
-                  </div>
-
-                  <h5> تياجو ميسي يهدر ركلة جزاء بطريقة غريبة </h5>
-                </div>
-              </router-link>
-            </div>
             <div class="col-12 col-xl-6 col-lg-6 mob">
               <div class="row">
                 <div v-for="i in 4" class="col-12 col-lg-6 col-xl-6 mb-3">
@@ -637,133 +858,250 @@ let activeBtn = ref(2);
                         <img src="../assets/images/video1.png" />
                         <div class="overlay"></div>
                         <div class="icon">
-                          <svg xmlns="http://www.w3.org/2000/svg" width="124" height="124" viewBox="0 0 124 124"
-                            fill="none">
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="124"
+                            height="124"
+                            viewBox="0 0 124 124"
+                            fill="none"
+                          >
                             <path
                               d="M48.9441 92.7071L48.9397 92.71C48.1409 93.2291 47.3608 93.4889 46.5938 93.5169C45.8273 93.5449 45.0396 93.3427 44.2231 92.8844L44.2228 92.8842C43.4078 92.4273 42.8171 91.8583 42.4274 91.1833C42.0374 90.5076 41.833 89.6983 41.833 88.7375V35.2625C41.833 33.3719 42.6213 32.0117 44.223 31.1106C45.0391 30.6541 45.8268 30.4531 46.5933 30.4818C47.3605 30.5106 48.1408 30.7708 48.9397 31.2901L48.9397 31.2901L48.9442 31.2929L91.0476 58.0273C92.4527 58.9658 93.1455 60.2712 93.1455 62C93.1455 63.7288 92.4527 65.0341 91.0477 65.9726L48.9441 92.7071Z"
-                              fill="#B7B7B7" stroke="#F8F8F9" />
+                              fill="#B7B7B7"
+                              stroke="#F8F8F9"
+                            />
                           </svg>
                         </div>
                         <div class="time">
                           <span>10:00</span>
-                          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-                            <path d="M0 4C0 1.79086 1.79086 0 4 0H24V24H4C1.79086 24 0 22.2091 0 20V4Z" fill="#212121" />
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="24"
+                            height="24"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                          >
+                            <path
+                              d="M0 4C0 1.79086 1.79086 0 4 0H24V24H4C1.79086 24 0 22.2091 0 20V4Z"
+                              fill="#212121"
+                            />
                             <path
                               d="M9.525 18.025C9.19167 18.2417 8.854 18.254 8.512 18.062C8.17067 17.8707 8 17.575 8 17.175V6.82499C8 6.42499 8.17067 6.12899 8.512 5.93699C8.854 5.74566 9.19167 5.75832 9.525 5.97499L17.675 11.15C17.975 11.35 18.125 11.6333 18.125 12C18.125 12.3667 17.975 12.65 17.675 12.85L9.525 18.025Z"
-                              fill="#B41618" />
+                              fill="#B41618"
+                            />
                           </svg>
                         </div>
                       </div>
 
-                      <h5> تياجو ميسي يهدر ركلة جزاء بطريقة غريبة </h5>
+                      <h5>تياجو ميسي يهدر ركلة جزاء بطريقة غريبة</h5>
                     </div>
                   </router-link>
                 </div>
               </div>
             </div>
+            <div class="col-12 col-xl-6 col-lg-6">
+              <router-link to="/videoMatch">
+                <div class="video-card sum-main">
+                  <div class="video-container">
+                    <img src="../assets/images/news3.png" />
+                    <div class="overlay"></div>
+                    <div class="icon">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="124"
+                        height="124"
+                        viewBox="0 0 124 124"
+                        fill="none"
+                      >
+                        <path
+                          d="M48.9441 92.7071L48.9397 92.71C48.1409 93.2291 47.3608 93.4889 46.5938 93.5169C45.8273 93.5449 45.0396 93.3427 44.2231 92.8844L44.2228 92.8842C43.4078 92.4273 42.8171 91.8583 42.4274 91.1833C42.0374 90.5076 41.833 89.6983 41.833 88.7375V35.2625C41.833 33.3719 42.6213 32.0117 44.223 31.1106C45.0391 30.6541 45.8268 30.4531 46.5933 30.4818C47.3605 30.5106 48.1408 30.7708 48.9397 31.2901L48.9397 31.2901L48.9442 31.2929L91.0476 58.0273C92.4527 58.9658 93.1455 60.2712 93.1455 62C93.1455 63.7288 92.4527 65.0341 91.0477 65.9726L48.9441 92.7071Z"
+                          fill="#B7B7B7"
+                          stroke="#F8F8F9"
+                        />
+                      </svg>
+                    </div>
+                    <div class="time">
+                      <span>10:00</span>
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                      >
+                        <path
+                          d="M0 4C0 1.79086 1.79086 0 4 0H24V24H4C1.79086 24 0 22.2091 0 20V4Z"
+                          fill="#212121"
+                        />
+                        <path
+                          d="M9.525 18.025C9.19167 18.2417 8.854 18.254 8.512 18.062C8.17067 17.8707 8 17.575 8 17.175V6.82499C8 6.42499 8.17067 6.12899 8.512 5.93699C8.854 5.74566 9.19167 5.75832 9.525 5.97499L17.675 11.15C17.975 11.35 18.125 11.6333 18.125 12C18.125 12.3667 17.975 12.65 17.675 12.85L9.525 18.025Z"
+                          fill="#B41618"
+                        />
+                      </svg>
+                    </div>
+                  </div>
+
+                  <h5>تياجو ميسي يهدر ركلة جزاء بطريقة غريبة</h5>
+                </div>
+              </router-link>
+            </div>
           </div>
-          <swiper :slidesPerView="1" :spaceBetween="10" :breakpoints="{
-            '300': {
-              slidesPerView: 1.4,
-              spaceBetween: 20,
-            },
-            '1024': {
-              slidesPerView: 3,
-              spaceBetween: 10,
-            },
-            '1200': {
-              slidesPerView: 4,
-              spaceBetween: 10,
-            },
-          }" :modules="modules" class="boxes">
+          <swiper
+            :slidesPerView="1"
+            :spaceBetween="10"
+            :breakpoints="{
+              '300': {
+                slidesPerView: 1.4,
+                spaceBetween: 20,
+              },
+              '1024': {
+                slidesPerView: 3,
+                spaceBetween: 10,
+              },
+              '1200': {
+                slidesPerView: 4,
+                spaceBetween: 10,
+              },
+            }"
+            :modules="modules"
+            class="boxes"
+          >
             <swiper-slide v-for="i in 8">
               <router-link to="/videoMatch" class="video-card sum">
                 <div class="video-container">
                   <img src="../assets/images/video1.png" />
                   <div class="overlay"></div>
                   <div class="icon">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="124" height="124" viewBox="0 0 124 124" fill="none">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="124"
+                      height="124"
+                      viewBox="0 0 124 124"
+                      fill="none"
+                    >
                       <path
                         d="M48.9441 92.7071L48.9397 92.71C48.1409 93.2291 47.3608 93.4889 46.5938 93.5169C45.8273 93.5449 45.0396 93.3427 44.2231 92.8844L44.2228 92.8842C43.4078 92.4273 42.8171 91.8583 42.4274 91.1833C42.0374 90.5076 41.833 89.6983 41.833 88.7375V35.2625C41.833 33.3719 42.6213 32.0117 44.223 31.1106C45.0391 30.6541 45.8268 30.4531 46.5933 30.4818C47.3605 30.5106 48.1408 30.7708 48.9397 31.2901L48.9397 31.2901L48.9442 31.2929L91.0476 58.0273C92.4527 58.9658 93.1455 60.2712 93.1455 62C93.1455 63.7288 92.4527 65.0341 91.0477 65.9726L48.9441 92.7071Z"
-                        fill="#B7B7B7" stroke="#F8F8F9" />
+                        fill="#B7B7B7"
+                        stroke="#F8F8F9"
+                      />
                     </svg>
                   </div>
                   <div class="time">
                     <span>10:00</span>
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-                      <path d="M0 4C0 1.79086 1.79086 0 4 0H24V24H4C1.79086 24 0 22.2091 0 20V4Z" fill="#212121" />
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                    >
+                      <path
+                        d="M0 4C0 1.79086 1.79086 0 4 0H24V24H4C1.79086 24 0 22.2091 0 20V4Z"
+                        fill="#212121"
+                      />
                       <path
                         d="M9.525 18.025C9.19167 18.2417 8.854 18.254 8.512 18.062C8.17067 17.8707 8 17.575 8 17.175V6.82499C8 6.42499 8.17067 6.12899 8.512 5.93699C8.854 5.74566 9.19167 5.75832 9.525 5.97499L17.675 11.15C17.975 11.35 18.125 11.6333 18.125 12C18.125 12.3667 17.975 12.65 17.675 12.85L9.525 18.025Z"
-                        fill="#B41618" />
+                        fill="#B41618"
+                      />
                     </svg>
                   </div>
                 </div>
 
-                <h5> تياجو ميسي يهدر ركلة جزاء بطريقة غريبة </h5>
-
+                <h5>تياجو ميسي يهدر ركلة جزاء بطريقة غريبة</h5>
               </router-link>
             </swiper-slide>
           </swiper>
           <router-link to="/newsMatches" class="h-100">
             <button class="all-mobile">
               عرض المزيد
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-                <path d="M5 12H19M5 12L12 5M5 12L12 19" stroke="#F8F8F9" stroke-width="2" stroke-linecap="round"
-                  stroke-linejoin="round" />
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+              >
+                <path
+                  d="M5 12H19M5 12L12 5M5 12L12 19"
+                  stroke="#F8F8F9"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
               </svg>
             </button>
-
           </router-link>
-
         </div>
       </div>
 
       <div class="addds-row"></div>
 
-
       <div class="stat-container-home">
         <div class="head-line">
-          <h4> إحصائيات دوري أبطال أوروبا</h4>
-
+          <h4>إحصائيات دوري أبطال أوروبا</h4>
 
           <button>
-            <RouterLink to="/stat" class=" w-100 h-100 d-flex align-items-center justify-content-center">
+            <RouterLink
+              to="/stat"
+              class="w-100 h-100 d-flex align-items-center justify-content-center"
+            >
               عرض المزيد
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-                <path d="M5 12H19M5 12L12 5M5 12L12 19" stroke="#F8F8F9" stroke-width="2" stroke-linecap="round"
-                  stroke-linejoin="round" />
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+              >
+                <path
+                  d="M5 12H19M5 12L12 5M5 12L12 19"
+                  stroke="#F8F8F9"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
               </svg>
-
             </RouterLink>
           </button>
         </div>
-        <div class="main mt-5">
+        <div class="main mt-4">
           <div class="row d-none d-xl-flex d-lg-none">
             <div class="col-12 col-xl-4 col-lg-4 col-md-6 mb-3">
               <div class="box">
                 <div class="head">
-                  <h5> الهدافون </h5>
+                  <h5>الهدافون</h5>
                 </div>
                 <div class="body">
                   <div v-for="i in 9" class="players">
                     <div class="img-container">
                       <img src="../assets/images/player.png" />
                       <div class="d-flex flex-column gap-2">
-                        <h6> ألفارو موراتا </h6>
+                        <h6>ألفارو موراتا</h6>
                         <span> اتلتيكو مدريد </span>
                       </div>
                     </div>
                     <div class="goals">
-                      <h6> 5 </h6>
+                      <h6>5</h6>
                       <span> هدف </span>
                     </div>
                   </div>
                 </div>
                 <div class="foot d-flex gap-2">
                   <h5 class="pt-1">كل الهدافين</h5>
-                  <svg xmlns="http://www.w3.org/2000/svg" width="25" height="24" viewBox="0 0 25 24" fill="none">
-                    <path d="M5.5 12H19.5M5.5 12L12.5 5M5.5 12L12.5 19" stroke="#F8F8F9" stroke-width="2"
-                      stroke-linecap="round" stroke-linejoin="round" />
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="25"
+                    height="24"
+                    viewBox="0 0 25 24"
+                    fill="none"
+                  >
+                    <path
+                      d="M5.5 12H19.5M5.5 12L12.5 5M5.5 12L12.5 19"
+                      stroke="#F8F8F9"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
                   </svg>
                 </div>
               </div>
@@ -771,28 +1109,39 @@ let activeBtn = ref(2);
             <div class="col-12 col-xl-4 col-lg-4 col-md-6 mb-3">
               <div class="box">
                 <div class="head">
-                  <h5> قائمة صانعي الأهداف </h5>
+                  <h5>قائمة صانعي الأهداف</h5>
                 </div>
                 <div class="body">
                   <div v-for="i in 9" class="players">
                     <div class="img-container">
                       <img src="../assets/images/player.png" />
                       <div class="d-flex flex-column gap-2">
-                        <h6> ألفارو موراتا </h6>
+                        <h6>ألفارو موراتا</h6>
                         <span> اتلتيكو مدريد </span>
                       </div>
                     </div>
                     <div class="goals">
-                      <h6> 5 </h6>
+                      <h6>5</h6>
                       <span> هدف </span>
                     </div>
                   </div>
                 </div>
                 <div class="foot d-flex gap-2">
-                  <h5 class="pt-1"> كل صانعي الأهداف </h5>
-                  <svg xmlns="http://www.w3.org/2000/svg" width="25" height="24" viewBox="0 0 25 24" fill="none">
-                    <path d="M5.5 12H19.5M5.5 12L12.5 5M5.5 12L12.5 19" stroke="#F8F8F9" stroke-width="2"
-                      stroke-linecap="round" stroke-linejoin="round" />
+                  <h5 class="pt-1">كل صانعي الأهداف</h5>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="25"
+                    height="24"
+                    viewBox="0 0 25 24"
+                    fill="none"
+                  >
+                    <path
+                      d="M5.5 12H19.5M5.5 12L12.5 5M5.5 12L12.5 19"
+                      stroke="#F8F8F9"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
                   </svg>
                 </div>
               </div>
@@ -800,14 +1149,14 @@ let activeBtn = ref(2);
             <div class="col-12 col-xl-4 col-lg-4 col-md-6 mb-3">
               <div class="box">
                 <div class="head">
-                  <h5> المباريات القادمة </h5>
+                  <h5>المباريات القادمة</h5>
                 </div>
                 <div class="body">
                   <div class="matches">
                     <div v-for="i in 9" class="match">
                       <div class="image">
                         <img src="../assets/images/clup1.png" />
-                        <h6> لايزبيج </h6>
+                        <h6>لايزبيج</h6>
                       </div>
                       <div class="time">
                         <h6>19:30</h6>
@@ -815,19 +1164,32 @@ let activeBtn = ref(2);
                       </div>
                       <div class="image">
                         <img src="../assets/images/clup2.png" />
-                        <h6> يونج بويز </h6>
+                        <h6>يونج بويز</h6>
                       </div>
-
                     </div>
                   </div>
                 </div>
                 <div class="foot d-flex gap-2">
-                  <RouterLink to="/matches" class=" w-100 h-100 d-flex gap-2 align-items-center justify-content-center">
-                    <h5 class="pt-1"> كل المباريات </h5>
-                    <svg class="mt-2" xmlns="http://www.w3.org/2000/svg" width="25" height="24" viewBox="0 0 25 24"
-                      fill="none">
-                      <path d="M5.5 12H19.5M5.5 12L12.5 5M5.5 12L12.5 19" stroke="#F8F8F9" stroke-width="2"
-                        stroke-linecap="round" stroke-linejoin="round" />
+                  <RouterLink
+                    to="/matches"
+                    class="w-100 h-100 d-flex gap-2 align-items-center justify-content-center"
+                  >
+                    <h5 class="pt-1">كل المباريات</h5>
+                    <svg
+                      class="mt-2"
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="25"
+                      height="24"
+                      viewBox="0 0 25 24"
+                      fill="none"
+                    >
+                      <path
+                        d="M5.5 12H19.5M5.5 12L12.5 5M5.5 12L12.5 19"
+                        stroke="#F8F8F9"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
                     </svg>
                   </RouterLink>
                 </div>
@@ -835,79 +1197,102 @@ let activeBtn = ref(2);
             </div>
           </div>
 
-          <swiper :slidesPerView="1" :spaceBetween="10" :navigation="{
-            nextEl: '.arrow-right2',
-            prevEl: '.arrow-left2',
-          }" :modules="modules" class="d-block d-xl-none d-lg-none">
+          <swiper
+            :slidesPerView="1"
+            :spaceBetween="10"
+            :navigation="{
+              nextEl: '.arrow-right2',
+              prevEl: '.arrow-left2',
+            }"
+            :modules="modules"
+            class="d-block d-xl-none d-lg-none"
+          >
             <swiper-slide class="box">
-
               <div class="head">
-                <h5> الهدافون </h5>
+                <h5>الهدافون</h5>
               </div>
               <div class="body">
                 <div v-for="i in 9" class="players">
                   <div class="img-container">
                     <img src="../assets/images/player.png" />
                     <div class="d-flex flex-column gap-2">
-                      <h6> ألفارو موراتا </h6>
+                      <h6>ألفارو موراتا</h6>
                       <span> اتلتيكو مدريد </span>
                     </div>
                   </div>
                   <div class="goals">
-                    <h6> 5 </h6>
+                    <h6>5</h6>
                     <span> هدف </span>
                   </div>
                 </div>
               </div>
               <div class="foot d-flex gap-2">
                 <h5 class="pt-1">كل الهدافين</h5>
-                <svg xmlns="http://www.w3.org/2000/svg" width="25" height="24" viewBox="0 0 25 24" fill="none">
-                  <path d="M5.5 12H19.5M5.5 12L12.5 5M5.5 12L12.5 19" stroke="#F8F8F9" stroke-width="2"
-                    stroke-linecap="round" stroke-linejoin="round" />
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="25"
+                  height="24"
+                  viewBox="0 0 25 24"
+                  fill="none"
+                >
+                  <path
+                    d="M5.5 12H19.5M5.5 12L12.5 5M5.5 12L12.5 19"
+                    stroke="#F8F8F9"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
                 </svg>
               </div>
-
             </swiper-slide>
             <swiper-slide class="box">
-
               <div class="head">
-                <h5> قائمة صانعي الأهداف </h5>
+                <h5>قائمة صانعي الأهداف</h5>
               </div>
               <div class="body">
                 <div v-for="i in 9" class="players">
                   <div class="img-container">
                     <img src="../assets/images/player.png" />
                     <div class="d-flex flex-column gap-2">
-                      <h6> ألفارو موراتا </h6>
+                      <h6>ألفارو موراتا</h6>
                       <span> اتلتيكو مدريد </span>
                     </div>
                   </div>
                   <div class="goals">
-                    <h6> 5 </h6>
+                    <h6>5</h6>
                     <span> هدف </span>
                   </div>
                 </div>
               </div>
               <div class="foot d-flex gap-2">
-                <h5 class="pt-1"> كل صانعي الأهداف </h5>
-                <svg xmlns="http://www.w3.org/2000/svg" width="25" height="24" viewBox="0 0 25 24" fill="none">
-                  <path d="M5.5 12H19.5M5.5 12L12.5 5M5.5 12L12.5 19" stroke="#F8F8F9" stroke-width="2"
-                    stroke-linecap="round" stroke-linejoin="round" />
+                <h5 class="pt-1">كل صانعي الأهداف</h5>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="25"
+                  height="24"
+                  viewBox="0 0 25 24"
+                  fill="none"
+                >
+                  <path
+                    d="M5.5 12H19.5M5.5 12L12.5 5M5.5 12L12.5 19"
+                    stroke="#F8F8F9"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
                 </svg>
               </div>
-
             </swiper-slide>
             <swiper-slide class="box">
-
               <div class="head">
-                <h5> المباريات القادمة </h5>
+                <h5>المباريات القادمة</h5>
               </div>
               <div class="body">
                 <div class="matches">
                   <div v-for="i in 9" class="match">
                     <div class="image">
                       <img src="../assets/images/clup1.png" />
-                      <h6> لايزبيج </h6>
+                      <h6>لايزبيج</h6>
                     </div>
                     <div class="time">
                       <h6>19:30</h6>
@@ -915,40 +1300,74 @@ let activeBtn = ref(2);
                     </div>
                     <div class="image">
                       <img src="../assets/images/clup2.png" />
-                      <h6> يونج بويز </h6>
+                      <h6>يونج بويز</h6>
                     </div>
-
                   </div>
                 </div>
               </div>
               <div class="foot d-flex gap-2">
-                <RouterLink to="/matches" class=" w-100 h-100 d-flex gap-2 align-items-center justify-content-center">
-                  <h5 class="pt-1"> كل المباريات </h5>
-                  <svg class="mt-2" xmlns="http://www.w3.org/2000/svg" width="25" height="24" viewBox="0 0 25 24"
-                    fill="none">
-                    <path d="M5.5 12H19.5M5.5 12L12.5 5M5.5 12L12.5 19" stroke="#F8F8F9" stroke-width="2"
-                      stroke-linecap="round" stroke-linejoin="round" />
+                <RouterLink
+                  to="/matches"
+                  class="w-100 h-100 d-flex gap-2 align-items-center justify-content-center"
+                >
+                  <h5 class="pt-1">كل المباريات</h5>
+                  <svg
+                    class="mt-2"
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="25"
+                    height="24"
+                    viewBox="0 0 25 24"
+                    fill="none"
+                  >
+                    <path
+                      d="M5.5 12H19.5M5.5 12L12.5 5M5.5 12L12.5 19"
+                      stroke="#F8F8F9"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
                   </svg>
                 </RouterLink>
               </div>
-
             </swiper-slide>
           </swiper>
-          <div class="d-flex d-xl-none d-lg-none align-items-center justify-content-center arrowss-container gap-3">
-
+          <div
+            class="d-flex d-xl-none d-lg-none align-items-center justify-content-center arrowss-container gap-3"
+          >
             <div class="arroww arrow-right2">
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-                <path d="M19 12H5M19 12L12 5M19 12L12 19" stroke="#B7B7B7" stroke-width="2" stroke-linecap="round"
-                  stroke-linejoin="round" />
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+              >
+                <path
+                  d="M19 12H5M19 12L12 5M19 12L12 19"
+                  stroke="#B7B7B7"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
               </svg>
             </div>
             <div class="arroww arrow-left2">
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-                <path d="M5 12H19M5 12L12 5M5 12L12 19" stroke="#B7B7B7" stroke-width="2" stroke-linecap="round"
-                  stroke-linejoin="round" />
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+              >
+                <path
+                  d="M5 12H19M5 12L12 5M5 12L12 19"
+                  stroke="#B7B7B7"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
               </svg>
             </div>
-
           </div>
           <!-- <button class="all-mobile">
             عرض المزيد
@@ -960,10 +1379,303 @@ let activeBtn = ref(2);
         </div>
       </div>
 
+      <div class="transfer-container-home">
+        <div class="head-line">
+          <h4>الانتقالات</h4>
+        </div>
+        <div class="main mt-4">
+          <div class="row d-xl-flex d-lg-none">
+            <div class="col-12 col-xl-6 col-lg-6 col-md-6 mb-3">
+              <div class="card p-2" style="background-color: #f2f2f2">
+                <div class="d-flex justify-content-between mb-4">
+                  <div>19/7/2024</div>
+                  <div>الانتقالات</div>
+                </div>
+                <div
+                  class="d-flex flex-column align-items-center justify-contnet-center"
+                >
+                  <div
+                    class="img-container d-flex flex-column align-items-center"
+                  >
+                    <img
+                      src="../assets/images/player.png"
+                      class="img-circle mb-2"
+                    />
+                    <h6>ألفارو موراتا</h6>
+                  </div>
+
+                  <div class="mt-3 d-flex align-items-center">
+                    <div class="d-flex gap-2 align-items-center mb-1 me-3">
+                      <img src="../assets/images/clup1.png" width="50" />
+                      <p class="fw-bold">ريال مدريد</p>
+                    </div>
+                    <svg
+                      class="w-6 h-6 text-gray-800 dark:text-white"
+                      aria-hidden="true"
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="40"
+                      height="40"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        stroke="currentColor"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="m17 16-4-4 4-4m-6 8-4-4 4-4"
+                      />
+                    </svg>
+                    <div class="d-flex gap-2 align-items-center mb-1">
+                      <h5 class="fw-bold m-4">انتقل</h5>
+                    </div>
+                    <svg
+                      class="w-6 h-6 text-gray-800 dark:text-white"
+                      aria-hidden="true"
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="40"
+                      height="40"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        stroke="currentColor"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="m17 16-4-4 4-4m-6 8-4-4 4-4"
+                      />
+                    </svg>
+
+                    <div class="d-flex gap-2 align-items-center mb-1 ms-3">
+                      <img src="../assets/images/clup2.png" width="50" />
+                      <p class="fw-bold">ارسنال</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-12 col-xl-6 col-lg-6 col-md-6 mb-3">
+              <div class="card p-2" style="background-color: #f2f2f2">
+                <div class="d-flex justify-content-between mb-4">
+                  <div>19/7/2024</div>
+                  <div>الانتقالات</div>
+                </div>
+                <div
+                  class="d-flex flex-column align-items-center justify-contnet-center"
+                >
+                  <div
+                    class="img-container d-flex flex-column align-items-center"
+                  >
+                    <img
+                      src="../assets/images/player.png"
+                      class="img-circle mb-2"
+                    />
+                    <h6>ألفارو موراتا</h6>
+                  </div>
+
+                  <div class="mt-3 d-flex align-items-center">
+                    <div class="d-flex gap-2 align-items-center mb-1 me-3">
+                      <img src="../assets/images/clup1.png" width="50" />
+                      <p class="fw-bold">ريال مدريد</p>
+                    </div>
+                    <svg
+                      class="w-6 h-6 text-gray-800 dark:text-white"
+                      aria-hidden="true"
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="40"
+                      height="40"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        stroke="currentColor"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="m17 16-4-4 4-4m-6 8-4-4 4-4"
+                      />
+                    </svg>
+                    <div class="d-flex gap-2 align-items-center mb-1">
+                      <h5 class="fw-bold m-4">انتقل</h5>
+                    </div>
+                    <svg
+                      class="w-6 h-6 text-gray-800 dark:text-white"
+                      aria-hidden="true"
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="40"
+                      height="40"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        stroke="currentColor"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="m17 16-4-4 4-4m-6 8-4-4 4-4"
+                      />
+                    </svg>
+
+                    <div class="d-flex gap-2 align-items-center mb-1 ms-3">
+                      <img src="../assets/images/clup2.png" width="50" />
+                      <p class="fw-bold">ارسنال</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-12 col-xl-6 col-lg-6 col-md-6 mb-3">
+              <div class="card p-2" style="background-color: #f2f2f2">
+                <div class="d-flex justify-content-between mb-4">
+                  <div>19/7/2024</div>
+                  <div>الانتقالات</div>
+                </div>
+                <div
+                  class="d-flex flex-column align-items-center justify-contnet-center"
+                >
+                  <div
+                    class="img-container d-flex flex-column align-items-center"
+                  >
+                    <img
+                      src="../assets/images/player.png"
+                      class="img-circle mb-2"
+                    />
+                    <h6>ألفارو موراتا</h6>
+                  </div>
+
+                  <div class="mt-3 d-flex align-items-center">
+                    <div class="d-flex gap-2 align-items-center mb-1 me-3">
+                      <img src="../assets/images/clup1.png" width="50" />
+                      <p class="fw-bold">ريال مدريد</p>
+                    </div>
+                    <svg
+                      class="w-6 h-6 text-gray-800 dark:text-white"
+                      aria-hidden="true"
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="40"
+                      height="40"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        stroke="currentColor"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="m17 16-4-4 4-4m-6 8-4-4 4-4"
+                      />
+                    </svg>
+                    <div class="d-flex gap-2 align-items-center mb-1">
+                      <h5 class="fw-bold m-4">انتقل</h5>
+                    </div>
+                    <svg
+                      class="w-6 h-6 text-gray-800 dark:text-white"
+                      aria-hidden="true"
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="40"
+                      height="40"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        stroke="currentColor"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="m17 16-4-4 4-4m-6 8-4-4 4-4"
+                      />
+                    </svg>
+
+                    <div class="d-flex gap-2 align-items-center mb-1 ms-3">
+                      <img src="../assets/images/clup2.png" width="50" />
+                      <p class="fw-bold">ارسنال</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-12 col-xl-6 col-lg-6 col-md-6 mb-3">
+              <div class="card p-2" style="background-color: #f2f2f2">
+                <div class="d-flex justify-content-between mb-4">
+                  <div>19/7/2024</div>
+                  <div>الانتقالات</div>
+                </div>
+                <div
+                  class="d-flex flex-column align-items-center justify-contnet-center"
+                >
+                  <div
+                    class="img-container d-flex flex-column align-items-center"
+                  >
+                    <img
+                      src="../assets/images/player.png"
+                      class="img-circle mb-2"
+                    />
+                    <h6>ألفارو موراتا</h6>
+                  </div>
+
+                  <div class="mt-3 d-flex align-items-center">
+                    <div class="d-flex gap-2 align-items-center mb-1 me-3">
+                      <img src="../assets/images/clup1.png" width="50" />
+                      <p class="fw-bold">ريال مدريد</p>
+                    </div>
+                    <svg
+                      class="w-6 h-6 text-gray-800 dark:text-white"
+                      aria-hidden="true"
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="40"
+                      height="40"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        stroke="currentColor"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="m17 16-4-4 4-4m-6 8-4-4 4-4"
+                      />
+                    </svg>
+                    <div class="d-flex gap-2 align-items-center mb-1">
+                      <h5 class="fw-bold m-4">انتقل</h5>
+                    </div>
+                    <svg
+                      class="w-6 h-6 text-gray-800 dark:text-white"
+                      aria-hidden="true"
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="40"
+                      height="40"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        stroke="currentColor"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="m17 16-4-4 4-4m-6 8-4-4 4-4"
+                      />
+                    </svg>
+
+                    <div class="d-flex gap-2 align-items-center mb-1 ms-3">
+                      <img src="../assets/images/clup2.png" width="50" />
+                      <p class="fw-bold">ارسنال</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- <button class="all-mobile">
+            عرض المزيد
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+              <path d="M5 12H19M5 12L12 5M5 12L12 19" stroke="#F8F8F9" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round" />
+            </svg>
+          </button> -->
+        </div>
+      </div>
     </div>
-
-
-
-
   </div>
 </template>
